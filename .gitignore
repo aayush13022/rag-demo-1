@@ -25,11 +25,8 @@ dist/
 build/
 *.egg
 
-# Ingestion & vector store (generated at runtime)
-data/raw/
-data/processed/
-data/chroma/
-data/metadata.db
+# Data artifacts (committed for demo clone-and-run; re-ingest via scheduler locally)
+data/**/.DS_Store
 
 # ML model caches (downloaded on first embed/query)
 .cache/

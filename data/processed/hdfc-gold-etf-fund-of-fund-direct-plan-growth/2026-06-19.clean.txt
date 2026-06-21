@@ -1,0 +1,56 @@
+Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth
+Source: https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth
+Processed: 2026-06-19T03:46:11.771226+00:00
+Sections: 9
+
+=== overview ===
+Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth
+Risk: High Risk
+NAV: ₹46.83
+NAV date: 16 Jun '26
+AUM: ₹12,121.18 Cr
+Min SIP: 100
+Expense ratio: 0.20%
+
+=== expense_ratio ===
+Expense ratio (direct plan): 0.20%
+
+=== exit_load ===
+Exit load: Exit load of 1%, if redeemed within 15 days.
+Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.
+
+=== minimum_investment ===
+Minimum investments:
+Min. for 1st investment: ₹100
+Min. for 2nd investment: ₹100
+Min. for SIP: ₹100
+
+=== benchmark ===
+Fund benchmark: Domestic Price of Gold
+
+=== tax ===
+Tax implication: If you redeem within two years, returns are taxed as per your Income Tax slab. If you redeem after two years, returns are taxed at 12.5%.
+
+=== fund_management ===
+Fund management:
+Manager 1: Arun Agarwal
+Tenure: Feb 2023
+Education: Mr. Agarwal is a B.Com. and Chartered Accountant
+Experience: Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.
+Manager 2: Nandita Menezes
+Tenure: Mar 2025
+Education: CA (ICAI, INDIA), B.Com (University of Mumbai)
+Experience: Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.
+Also manages: HDFC Gold ETF Fund of Fund Direct Plan Growth; HDFC Balanced Advantage Fund Direct Growth; HDFC NIFTY 50 Index Fund Direct Growth; HDFC BSE Sensex Index Fund Direct Growth; HDFC Equity Savings Direct Plan Growth
+(+34 more schemes)
+
+=== investment_objective ===
+Investment objective: The Scheme seeks to generate capital appreciation by investing in units of HDFC Gold Exchange Traded Fund.
+
+=== fund_house ===
+Fund house:
+AMC: HDFC Mutual Fund
+Launch date: 10 Dec 1999
+Date of incorporation: 10 Dec 1999
+Website: http://www.hdfcfund.com
+Address: "HDFC House", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian

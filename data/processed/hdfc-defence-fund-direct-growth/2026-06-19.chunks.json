@@ -1,0 +1,140 @@
+{
+  "scheme_name": "HDFC Defence Fund Direct Growth",
+  "scheme_slug": "hdfc-defence-fund-direct-growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+  "chunk_count": 11,
+  "section_types": [
+    "benchmark",
+    "exit_load",
+    "expense_ratio",
+    "fund_house",
+    "fund_management",
+    "investment_objective",
+    "minimum_investment",
+    "overview",
+    "tax"
+  ],
+  "chunks": [
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-overview-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: overview\n\nScheme: HDFC Defence Fund Direct Growth\nCategory: Equity Thematic\nRisk: Very High Risk\nNAV: ₹29.20\nNAV date: 16 Jun '26\nAUM: ₹9,724.27 Cr\nMin SIP: 100\nExpense ratio: 0.88%",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "overview",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-expense_ratio-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: expense_ratio\n\nExpense ratio (direct plan): 0.88%",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "expense_ratio",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-exit_load-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: exit_load\n\nExit load: Exit load of 1%, if redeemed within 1 year.\nStamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "exit_load",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-minimum_investment-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: minimum_investment\n\nMinimum investments:\nMin. for 1st investment: Not Supported\nMin. for 2nd investment: Not Supported\nMin. for SIP: ₹100",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "minimum_investment",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-benchmark-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: benchmark\n\nFund benchmark: Nifty India Defence Total Return Index",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "benchmark",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-tax-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: tax\n\nTax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "tax",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-fund_management-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: fund_management\n\nManager: Priya Ranjan\nTenure: Apr 2025\nEducation: Mr. Ranjan is B.E(Computer Science) and PGDBM (Finance).\nExperience: He has over 14 years of experience in equity research.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": "Priya Ranjan"
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-fund_management-002",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: fund_management\n\nManager: Dhruv Muchhal\nTenure: Jun 2023\nEducation: Mr. Dhruv has done B.Com, CA and CFA\nExperience: Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 2,
+      "manager_name": "Dhruv Muchhal"
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-fund_management-003",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: fund_management\n\nManager: Rahul Baijal\nTenure: Apr 2025\nEducation: Mr. Baijal has done PGDM(MBA) from IIM Calcutta and is an engineering graduate of Delhi college of Engineering\nExperience: Prior to joining HDFC Mutual Fund, he has worked with Sundaram Mutual Fund, Bharti AXA Life Insurance, TVF Capital, HSBC Securities, Credit Suisse Securities & Standard Chartered Bank.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 3,
+      "manager_name": "Rahul Baijal"
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-investment_objective-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: investment_objective\n\nInvestment objective: The scheme seeks to provide long-term capital appreciation by investing predominantly in equity and equity related securities of Defence & allied sector companies.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "investment_objective",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-defence-fund-direct-growth-fund_house-001",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nSection: fund_house\n\nFund house:\nAMC: HDFC Mutual Fund\nLaunch date: 10 Dec 1999\nDate of incorporation: 10 Dec 1999\nWebsite: http://www.hdfcfund.com\nAddress: \"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian",
+      "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "section_type": "fund_house",
+      "ingested_at": "2026-06-19T03:46:12.505592+00:00",
+      "sequence": 1,
+      "manager_name": null
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Production cron for daily corpus ingestion (10:00 AM IST)
+# Install: crontab -e  (paste the line below, adjust the project path)
+#
+# Fields: minute hour day month weekday
+0 10 * * * cd /path/to/rag-demo-1 && .venv/bin/python -m scheduler --once >> logs/scheduler.log 2>&1
+
+# Alternative using ingestion module directly:
+# 0 10 * * * cd /path/to/rag-demo-1 && .venv/bin/python -m ingestion.scheduler --once >> logs/scheduler.log 2>&1

@@ -1,0 +1,160 @@
+{
+  "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+  "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+  "processed_at": "2026-06-17T18:09:43.105512+00:00",
+  "raw_html_path": null,
+  "section_count": 9,
+  "section_types": [
+    "overview",
+    "expense_ratio",
+    "exit_load",
+    "minimum_investment",
+    "benchmark",
+    "tax",
+    "fund_management",
+    "investment_objective",
+    "fund_house"
+  ],
+  "sections": [
+    {
+      "section_type": "overview",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nRisk: High Risk\nNAV: ₹46.83\nNAV date: 16 Jun '26\nAUM: ₹12,121.18 Cr\nMin SIP: 100\nExpense ratio: 0.20%",
+      "fields": {
+        "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+        "risk": "High Risk",
+        "nav": "₹46.83",
+        "nav_date": "16 Jun '26",
+        "aum": "₹12,121.18 Cr",
+        "min_sip": "100",
+        "expense_ratio": "0.20%"
+      }
+    },
+    {
+      "section_type": "expense_ratio",
+      "text": "Expense ratio (direct plan): 0.20%",
+      "fields": {
+        "expense_ratio": "0.20%"
+      }
+    },
+    {
+      "section_type": "exit_load",
+      "text": "Exit load: Exit load of 1%, if redeemed within 15 days.\nStamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+      "fields": {
+        "exit_load": "Exit load of 1%, if redeemed within 15 days.",
+        "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+      }
+    },
+    {
+      "section_type": "minimum_investment",
+      "text": "Minimum investments:\nMin. for 1st investment: ₹100\nMin. for 2nd investment: ₹100\nMin. for SIP: ₹100",
+      "fields": {
+        "min_first_investment": "₹100",
+        "min_second_investment": "₹100",
+        "min_sip": "₹100"
+      }
+    },
+    {
+      "section_type": "benchmark",
+      "text": "Fund benchmark: Domestic Price of Gold",
+      "fields": {
+        "benchmark": "Domestic Price of Gold"
+      }
+    },
+    {
+      "section_type": "tax",
+      "text": "Tax implication: If you redeem within two years, returns are taxed as per your Income Tax slab. If you redeem after two years, returns are taxed at 12.5%.",
+      "fields": {
+        "tax_implication": "If you redeem within two years, returns are taxed as per your Income Tax slab. If you redeem after two years, returns are taxed at 12.5%."
+      }
+    },
+    {
+      "section_type": "fund_management",
+      "text": "Fund management:\nManager 1: Arun Agarwal\nTenure: Feb 2023\nEducation: Mr. Agarwal is a B.Com. and Chartered Accountant\nExperience: Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.\nManager 2: Nandita Menezes\nTenure: Mar 2025\nEducation: CA (ICAI, INDIA), B.Com (University of Mumbai)\nExperience: Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.\nAlso manages: HDFC Gold ETF Fund of Fund Direct Plan Growth; HDFC Balanced Advantage Fund Direct Growth; HDFC NIFTY 50 Index Fund Direct Growth; HDFC BSE Sensex Index Fund Direct Growth; HDFC Equity Savings Direct Plan Growth\n(+34 more schemes)",
+      "fields": {
+        "manager_1_name": "Arun Agarwal",
+        "manager_1_tenure": "Feb 2023",
+        "manager_1_education": "Mr. Agarwal is a B.Com. and Chartered Accountant",
+        "manager_1_experience": "Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.",
+        "manager_2_name": "Nandita Menezes",
+        "manager_2_tenure": "Mar 2025",
+        "manager_2_education": "CA (ICAI, INDIA), B.Com (University of Mumbai)",
+        "manager_2_experience": "Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP."
+      },
+      "managers": [
+        {
+          "name": "Arun Agarwal",
+          "tenure": "Feb 2023",
+          "education": "Mr. Agarwal is a B.Com. and Chartered Accountant",
+          "experience": "Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.",
+          "other_schemes": []
+        },
+        {
+          "name": "Nandita Menezes",
+          "tenure": "Mar 2025",
+          "education": "CA (ICAI, INDIA), B.Com (University of Mumbai)",
+          "experience": "Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.",
+          "other_schemes": [
+            "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+            "HDFC Balanced Advantage Fund Direct Growth",
+            "HDFC NIFTY 50 Index Fund Direct Growth",
+            "HDFC BSE Sensex Index Fund Direct Growth",
+            "HDFC Equity Savings Direct Plan Growth",
+            "HDFC Multi Asset Allocation Fund Direct Growth",
+            "HDFC Arbitrage Fund Direct Growth",
+            "HDFC Retirement Savings Fund Equity Plan Direct Growth",
+            "HDFC Retirement Savings Fund Hybrid Equity Plan Direct Growth",
+            "HDFC Retirement Savings Fund Hybrid Debt Plan Direct Growth",
+            "HDFC NIFTY 50 ETF IDCW",
+            "HDFC NIFTY50 Equal Weight Index Fund Direct Growth",
+            "HDFC Developed World Overseas Equity Passive FoF Direct Growth",
+            "HDFC NIFTY Next 50 Index Fund Direct Growth",
+            "HDFC NIFTY 100 Index Fund Direct Growth",
+            "HDFC NIFTY 100 Equal Weight Index Fund Direct Growth",
+            "HDFC Silver ETF FoF Direct Growth",
+            "HDFC NIFTY Midcap 150 Index Fund Direct Growth",
+            "HDFC Nifty Smallcap 250 Index Fund Direct Growth",
+            "HDFC BSE 500 Index Fund Direct Growth",
+            "HDFC BSE Sensex ETF",
+            "HDFC NIFTY200 Momentum 30 Index Fund Direct Growth",
+            "HDFC NIFTY Realty Index Fund Direct Growth",
+            "HDFC NIFTY100 Low Volatility 30 Index Fund Direct Growth",
+            "HDFC Nifty500 Multicap 50:25:25 Index Fund Direct Growth",
+            "HDFC Nifty LargeMidcap 250 Index Fund Direct Growth",
+            "HDFC Nifty India Digital Index Fund Direct Growth",
+            "HDFC Nifty100 Quality 30 Index Fund Direct Growth",
+            "HDFC Nifty Top 20 Equal Weight Index Fund Direct Growth",
+            "HDFC BSE India Sector Leaders Index Fund Direct Growth",
+            "HDFC Nifty India Consumption Index Fund Direct Growth",
+            "NM",
+            "Nandita Menezes",
+            "Mar 2025",
+            "- Present",
+            "Education",
+            "CA (ICAI, INDIA), B.Com (University of Mumbai)",
+            "Experience",
+            "Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP."
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "investment_objective",
+      "text": "Investment objective: The Scheme seeks to generate capital appreciation by investing in units of HDFC Gold Exchange Traded Fund.",
+      "fields": {
+        "investment_objective": "The Scheme seeks to generate capital appreciation by investing in units of HDFC Gold Exchange Traded Fund."
+      }
+    },
+    {
+      "section_type": "fund_house",
+      "text": "Fund house:\nAMC: HDFC Mutual Fund\nLaunch date: 10 Dec 1999\nDate of incorporation: 10 Dec 1999\nWebsite: http://www.hdfcfund.com\nAddress: \"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian",
+      "fields": {
+        "amc_name": "HDFC Mutual Fund",
+        "launch_date": "10 Dec 1999",
+        "date_of_incorporation": "10 Dec 1999",
+        "website": "http://www.hdfcfund.com",
+        "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+      }
+    }
+  ]
+}

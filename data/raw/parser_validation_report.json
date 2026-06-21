@@ -1,0 +1,645 @@
+{
+  "schemes_validated": 5,
+  "schemes_passed": 5,
+  "schemes_failed": 0,
+  "details": [
+    {
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "status": "success",
+      "sections_found": 9,
+      "section_types": [
+        "benchmark",
+        "exit_load",
+        "expense_ratio",
+        "fund_house",
+        "fund_management",
+        "investment_objective",
+        "minimum_investment",
+        "overview",
+        "tax"
+      ],
+      "missing_sections": [],
+      "error": null,
+      "sections": [
+        {
+          "section_type": "overview",
+          "preview": "Scheme: HDFC Mid Cap Fund Direct Growth Category: Equity Mid Cap Risk: Very High Risk NAV: \u20b9223.29 NAV date: 16 Jun '26 AUM: \u20b997,350.48 Cr Min SIP: 100 Expen...",
+          "fields": {
+            "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+            "category": "Equity Mid Cap",
+            "risk": "Very High Risk",
+            "nav": "\u20b9223.29",
+            "nav_date": "16 Jun '26",
+            "aum": "\u20b997,350.48 Cr",
+            "min_sip": "100",
+            "expense_ratio": "0.76%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "expense_ratio",
+          "preview": "Expense ratio (direct plan): 0.76%",
+          "fields": {
+            "expense_ratio": "0.76%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "exit_load",
+          "preview": "Exit load: Exit load of 1% if redeemed within 1 year. Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+          "fields": {
+            "exit_load": "Exit load of 1% if redeemed within 1 year.",
+            "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "minimum_investment",
+          "preview": "Minimum investments: Min. for 1st investment: \u20b9100 Min. for 2nd investment: \u20b9100 Min. for SIP: \u20b9100",
+          "fields": {
+            "min_first_investment": "\u20b9100",
+            "min_second_investment": "\u20b9100",
+            "min_sip": "\u20b9100"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "benchmark",
+          "preview": "Fund benchmark: NIFTY Midcap 150 Total Return Index",
+          "fields": {
+            "benchmark": "NIFTY Midcap 150 Total Return Index"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "tax",
+          "preview": "Tax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year ar...",
+          "fields": {
+            "tax_implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_management",
+          "preview": "Fund management: Manager 1: Chirag Setalvad Tenure: Jan 2013 Education: Mr. Setalvad is a B. Sc and MBA from University of North Carolina. Experience: Prior ...",
+          "fields": {
+            "manager_1_name": "Chirag Setalvad",
+            "manager_1_tenure": "Jan 2013",
+            "manager_1_education": "Mr. Setalvad is a B. Sc and MBA from University of North Carolina.",
+            "manager_1_experience": "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+            "manager_2_name": "Dhruv Muchhal",
+            "manager_2_tenure": "Jun 2023",
+            "manager_2_education": "Mr. Dhruv has done B.Com, CA and CFA",
+            "manager_2_experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells"
+          },
+          "manager_count": 2
+        },
+        {
+          "section_type": "investment_objective",
+          "preview": "Investment objective: The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies.",
+          "fields": {
+            "investment_objective": "The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_house",
+          "preview": "Fund house: AMC: HDFC Mutual Fund Launch date: 10 Dec 1999 Date of incorporation: 10 Dec 1999 Website: http://www.hdfcfund.com Address: \"HDFC House\", 2nd Flo...",
+          "fields": {
+            "amc_name": "HDFC Mutual Fund",
+            "launch_date": "10 Dec 1999",
+            "date_of_incorporation": "10 Dec 1999",
+            "website": "http://www.hdfcfund.com",
+            "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+          },
+          "manager_count": 0
+        }
+      ],
+      "checks": {
+        "expense_ratio": true,
+        "exit_load": true,
+        "minimum_investment": true,
+        "fund_management": true,
+        "benchmark": true,
+        "tax": true,
+        "investment_objective": true,
+        "fund_house": true,
+        "overview": true
+      },
+      "passed": true
+    },
+    {
+      "scheme_name": "HDFC Large Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-large-cap-fund-direct-growth",
+      "url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "status": "success",
+      "sections_found": 9,
+      "section_types": [
+        "benchmark",
+        "exit_load",
+        "expense_ratio",
+        "fund_house",
+        "fund_management",
+        "investment_objective",
+        "minimum_investment",
+        "overview",
+        "tax"
+      ],
+      "missing_sections": [],
+      "error": null,
+      "sections": [
+        {
+          "section_type": "overview",
+          "preview": "Scheme: HDFC Large Cap Fund Direct Growth Category: Equity Large Cap Risk: Very High Risk NAV: \u20b91,203.64 NAV date: 16 Jun '26 AUM: \u20b937,808.31 Cr Min SIP: 100...",
+          "fields": {
+            "scheme_name": "HDFC Large Cap Fund Direct Growth",
+            "category": "Equity Large Cap",
+            "risk": "Very High Risk",
+            "nav": "\u20b91,203.64",
+            "nav_date": "16 Jun '26",
+            "aum": "\u20b937,808.31 Cr",
+            "min_sip": "100",
+            "expense_ratio": "1.02%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "expense_ratio",
+          "preview": "Expense ratio (direct plan): 1.02%",
+          "fields": {
+            "expense_ratio": "1.02%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "exit_load",
+          "preview": "Exit load: Exit load of 1% if redeemed within 1 year Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+          "fields": {
+            "exit_load": "Exit load of 1% if redeemed within 1 year",
+            "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "minimum_investment",
+          "preview": "Minimum investments: Min. for 1st investment: \u20b9100 Min. for 2nd investment: \u20b9100 Min. for SIP: \u20b9100",
+          "fields": {
+            "min_first_investment": "\u20b9100",
+            "min_second_investment": "\u20b9100",
+            "min_sip": "\u20b9100"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "benchmark",
+          "preview": "Fund benchmark: NIFTY 100 Total Return Index",
+          "fields": {
+            "benchmark": "NIFTY 100 Total Return Index"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "tax",
+          "preview": "Tax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year ar...",
+          "fields": {
+            "tax_implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_management",
+          "preview": "Fund management: Manager 1: Rahul Baijal Tenure: Jul 2022 Education: Mr. Baijal has done PGDM(MBA) from IIM Calcutta and is an engineering graduate of Delhi ...",
+          "fields": {
+            "manager_1_name": "Rahul Baijal",
+            "manager_1_tenure": "Jul 2022",
+            "manager_1_education": "Mr. Baijal has done PGDM(MBA) from IIM Calcutta and is an engineering graduate of Delhi college of Engineering",
+            "manager_1_experience": "Prior to joining HDFC Mutual Fund, he has worked with Sundaram Mutual Fund, Bharti AXA Life Insurance, TVF Capital, HSBC Securities, Credit Suisse Securities & Standard Chartered Bank.",
+            "manager_2_name": "Dhruv Muchhal",
+            "manager_2_tenure": "Jun 2023",
+            "manager_2_education": "Mr. Dhruv has done B.Com, CA and CFA",
+            "manager_2_experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells"
+          },
+          "manager_count": 2
+        },
+        {
+          "section_type": "investment_objective",
+          "preview": "Investment objective: The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Large-Cap companies.",
+          "fields": {
+            "investment_objective": "The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Large-Cap companies."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_house",
+          "preview": "Fund house: AMC: HDFC Mutual Fund Launch date: 10 Dec 1999 Date of incorporation: 10 Dec 1999 Website: http://www.hdfcfund.com Address: \"HDFC House\", 2nd Flo...",
+          "fields": {
+            "amc_name": "HDFC Mutual Fund",
+            "launch_date": "10 Dec 1999",
+            "date_of_incorporation": "10 Dec 1999",
+            "website": "http://www.hdfcfund.com",
+            "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+          },
+          "manager_count": 0
+        }
+      ],
+      "checks": {
+        "expense_ratio": true,
+        "exit_load": true,
+        "minimum_investment": true,
+        "fund_management": true,
+        "benchmark": true,
+        "tax": true,
+        "investment_objective": true,
+        "fund_house": true,
+        "overview": true
+      },
+      "passed": true
+    },
+    {
+      "scheme_name": "HDFC Small Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-small-cap-fund-direct-growth",
+      "url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
+      "status": "success",
+      "sections_found": 9,
+      "section_types": [
+        "benchmark",
+        "exit_load",
+        "expense_ratio",
+        "fund_house",
+        "fund_management",
+        "investment_objective",
+        "minimum_investment",
+        "overview",
+        "tax"
+      ],
+      "missing_sections": [],
+      "error": null,
+      "sections": [
+        {
+          "section_type": "overview",
+          "preview": "Scheme: HDFC Small Cap Fund Direct Growth Category: Equity Small Cap Risk: Very High Risk NAV: \u20b9156.09 NAV date: 16 Jun '26 AUM: \u20b938,809.48 Cr Min SIP: 100 E...",
+          "fields": {
+            "scheme_name": "HDFC Small Cap Fund Direct Growth",
+            "category": "Equity Small Cap",
+            "risk": "Very High Risk",
+            "nav": "\u20b9156.09",
+            "nav_date": "16 Jun '26",
+            "aum": "\u20b938,809.48 Cr",
+            "min_sip": "100",
+            "expense_ratio": "0.76%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "expense_ratio",
+          "preview": "Expense ratio (direct plan): 0.76%",
+          "fields": {
+            "expense_ratio": "0.76%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "exit_load",
+          "preview": "Exit load: Exit load of 1% if redeemed within 1 year Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+          "fields": {
+            "exit_load": "Exit load of 1% if redeemed within 1 year",
+            "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "minimum_investment",
+          "preview": "Minimum investments: Min. for 1st investment: \u20b9100 Min. for 2nd investment: \u20b9100 Min. for SIP: \u20b9100",
+          "fields": {
+            "min_first_investment": "\u20b9100",
+            "min_second_investment": "\u20b9100",
+            "min_sip": "\u20b9100"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "benchmark",
+          "preview": "Fund benchmark: BSE 250 SmallCap Total Return Index",
+          "fields": {
+            "benchmark": "BSE 250 SmallCap Total Return Index"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "tax",
+          "preview": "Tax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year ar...",
+          "fields": {
+            "tax_implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_management",
+          "preview": "Fund management: Manager 1: Dhruv Muchhal Tenure: Jun 2023 Education: Mr. Dhruv has done B.Com, CA and CFA Experience: Prior to joining HDFC MF,he has worked...",
+          "fields": {
+            "manager_1_name": "Dhruv Muchhal",
+            "manager_1_tenure": "Jun 2023",
+            "manager_1_education": "Mr. Dhruv has done B.Com, CA and CFA",
+            "manager_1_experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+            "manager_2_name": "Chirag Setalvad",
+            "manager_2_tenure": "Jun 2014",
+            "manager_2_education": "Mr. Setalvad is a B. Sc and MBA from University of North Carolina.",
+            "manager_2_experience": "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V."
+          },
+          "manager_count": 2
+        },
+        {
+          "section_type": "investment_objective",
+          "preview": "Investment objective: The scheme seeks to provide long-term capital appreciation /income by investing predominantly in Small-Cap companies.",
+          "fields": {
+            "investment_objective": "The scheme seeks to provide long-term capital appreciation /income by investing predominantly in Small-Cap companies."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_house",
+          "preview": "Fund house: AMC: HDFC Mutual Fund Launch date: 10 Dec 1999 Date of incorporation: 10 Dec 1999 Website: http://www.hdfcfund.com Address: \"HDFC House\", 2nd Flo...",
+          "fields": {
+            "amc_name": "HDFC Mutual Fund",
+            "launch_date": "10 Dec 1999",
+            "date_of_incorporation": "10 Dec 1999",
+            "website": "http://www.hdfcfund.com",
+            "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+          },
+          "manager_count": 0
+        }
+      ],
+      "checks": {
+        "expense_ratio": true,
+        "exit_load": true,
+        "minimum_investment": true,
+        "fund_management": true,
+        "benchmark": true,
+        "tax": true,
+        "investment_objective": true,
+        "fund_house": true,
+        "overview": true
+      },
+      "passed": true
+    },
+    {
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "status": "success",
+      "sections_found": 9,
+      "section_types": [
+        "benchmark",
+        "exit_load",
+        "expense_ratio",
+        "fund_house",
+        "fund_management",
+        "investment_objective",
+        "minimum_investment",
+        "overview",
+        "tax"
+      ],
+      "missing_sections": [],
+      "error": null,
+      "sections": [
+        {
+          "section_type": "overview",
+          "preview": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth Risk: High Risk NAV: \u20b946.83 NAV date: 16 Jun '26 AUM: \u20b912,121.18 Cr Min SIP: 100 Expense ratio: 0.20%",
+          "fields": {
+            "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+            "risk": "High Risk",
+            "nav": "\u20b946.83",
+            "nav_date": "16 Jun '26",
+            "aum": "\u20b912,121.18 Cr",
+            "min_sip": "100",
+            "expense_ratio": "0.20%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "expense_ratio",
+          "preview": "Expense ratio (direct plan): 0.20%",
+          "fields": {
+            "expense_ratio": "0.20%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "exit_load",
+          "preview": "Exit load: Exit load of 1%, if redeemed within 15 days. Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+          "fields": {
+            "exit_load": "Exit load of 1%, if redeemed within 15 days.",
+            "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "minimum_investment",
+          "preview": "Minimum investments: Min. for 1st investment: \u20b9100 Min. for 2nd investment: \u20b9100 Min. for SIP: \u20b9100",
+          "fields": {
+            "min_first_investment": "\u20b9100",
+            "min_second_investment": "\u20b9100",
+            "min_sip": "\u20b9100"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "benchmark",
+          "preview": "Fund benchmark: Domestic Price of Gold",
+          "fields": {
+            "benchmark": "Domestic Price of Gold"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "tax",
+          "preview": "Tax implication: If you redeem within two years, returns are taxed as per your Income Tax slab. If you redeem after two years, returns are taxed at 12.5%.",
+          "fields": {
+            "tax_implication": "If you redeem within two years, returns are taxed as per your Income Tax slab. If you redeem after two years, returns are taxed at 12.5%."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_management",
+          "preview": "Fund management: Manager 1: Arun Agarwal Tenure: Feb 2023 Education: Mr. Agarwal is a B.Com. and Chartered Accountant Experience: Prior to joining HDFC Asset...",
+          "fields": {
+            "manager_1_name": "Arun Agarwal",
+            "manager_1_tenure": "Feb 2023",
+            "manager_1_education": "Mr. Agarwal is a B.Com. and Chartered Accountant",
+            "manager_1_experience": "Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.",
+            "manager_2_name": "Nandita Menezes",
+            "manager_2_tenure": "Mar 2025",
+            "manager_2_education": "CA (ICAI, INDIA), B.Com (University of Mumbai)",
+            "manager_2_experience": "Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP."
+          },
+          "manager_count": 2
+        },
+        {
+          "section_type": "investment_objective",
+          "preview": "Investment objective: The Scheme seeks to generate capital appreciation by investing in units of HDFC Gold Exchange Traded Fund.",
+          "fields": {
+            "investment_objective": "The Scheme seeks to generate capital appreciation by investing in units of HDFC Gold Exchange Traded Fund."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_house",
+          "preview": "Fund house: AMC: HDFC Mutual Fund Launch date: 10 Dec 1999 Date of incorporation: 10 Dec 1999 Website: http://www.hdfcfund.com Address: \"HDFC House\", 2nd Flo...",
+          "fields": {
+            "amc_name": "HDFC Mutual Fund",
+            "launch_date": "10 Dec 1999",
+            "date_of_incorporation": "10 Dec 1999",
+            "website": "http://www.hdfcfund.com",
+            "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+          },
+          "manager_count": 0
+        }
+      ],
+      "checks": {
+        "expense_ratio": true,
+        "exit_load": true,
+        "minimum_investment": true,
+        "fund_management": true,
+        "benchmark": true,
+        "tax": true,
+        "investment_objective": true,
+        "fund_house": true,
+        "overview": true
+      },
+      "passed": true
+    },
+    {
+      "scheme_name": "HDFC Defence Fund Direct Growth",
+      "scheme_slug": "hdfc-defence-fund-direct-growth",
+      "url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
+      "status": "success",
+      "sections_found": 9,
+      "section_types": [
+        "benchmark",
+        "exit_load",
+        "expense_ratio",
+        "fund_house",
+        "fund_management",
+        "investment_objective",
+        "minimum_investment",
+        "overview",
+        "tax"
+      ],
+      "missing_sections": [],
+      "error": null,
+      "sections": [
+        {
+          "section_type": "overview",
+          "preview": "Scheme: HDFC Defence Fund Direct Growth Category: Equity Thematic Risk: Very High Risk NAV: \u20b929.20 NAV date: 16 Jun '26 AUM: \u20b99,724.27 Cr Min SIP: 100 Expens...",
+          "fields": {
+            "scheme_name": "HDFC Defence Fund Direct Growth",
+            "category": "Equity Thematic",
+            "risk": "Very High Risk",
+            "nav": "\u20b929.20",
+            "nav_date": "16 Jun '26",
+            "aum": "\u20b99,724.27 Cr",
+            "min_sip": "100",
+            "expense_ratio": "0.88%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "expense_ratio",
+          "preview": "Expense ratio (direct plan): 0.88%",
+          "fields": {
+            "expense_ratio": "0.88%"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "exit_load",
+          "preview": "Exit load: Exit load of 1%, if redeemed within 1 year. Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+          "fields": {
+            "exit_load": "Exit load of 1%, if redeemed within 1 year.",
+            "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "minimum_investment",
+          "preview": "Minimum investments: Min. for 1st investment: Not Supported Min. for 2nd investment: Not Supported Min. for SIP: \u20b9100",
+          "fields": {
+            "min_first_investment": "Not Supported",
+            "min_second_investment": "Not Supported",
+            "min_sip": "\u20b9100"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "benchmark",
+          "preview": "Fund benchmark: Nifty India Defence Total Return Index",
+          "fields": {
+            "benchmark": "Nifty India Defence Total Return Index"
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "tax",
+          "preview": "Tax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year ar...",
+          "fields": {
+            "tax_implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_management",
+          "preview": "Fund management: Manager 1: Priya Ranjan Tenure: Apr 2025 Education: Mr. Ranjan is B.E(Computer Science) and PGDBM (Finance). Experience: He has over 14 year...",
+          "fields": {
+            "manager_1_name": "Priya Ranjan",
+            "manager_1_tenure": "Apr 2025",
+            "manager_1_education": "Mr. Ranjan is B.E(Computer Science) and PGDBM (Finance).",
+            "manager_1_experience": "He has over 14 years of experience in equity research.",
+            "manager_2_name": "Dhruv Muchhal",
+            "manager_2_tenure": "Jun 2023",
+            "manager_2_education": "Mr. Dhruv has done B.Com, CA and CFA",
+            "manager_2_experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+            "manager_3_name": "Rahul Baijal",
+            "manager_3_tenure": "Apr 2025",
+            "manager_3_education": "Mr. Baijal has done PGDM(MBA) from IIM Calcutta and is an engineering graduate of Delhi college of Engineering",
+            "manager_3_experience": "Prior to joining HDFC Mutual Fund, he has worked with Sundaram Mutual Fund, Bharti AXA Life Insurance, TVF Capital, HSBC Securities, Credit Suisse Securities & Standard Chartered Bank."
+          },
+          "manager_count": 3
+        },
+        {
+          "section_type": "investment_objective",
+          "preview": "Investment objective: The scheme seeks to provide long-term capital appreciation by investing predominantly in equity and equity related securities of Defenc...",
+          "fields": {
+            "investment_objective": "The scheme seeks to provide long-term capital appreciation by investing predominantly in equity and equity related securities of Defence & allied sector companies."
+          },
+          "manager_count": 0
+        },
+        {
+          "section_type": "fund_house",
+          "preview": "Fund house: AMC: HDFC Mutual Fund Launch date: 10 Dec 1999 Date of incorporation: 10 Dec 1999 Website: http://www.hdfcfund.com Address: \"HDFC House\", 2nd Flo...",
+          "fields": {
+            "amc_name": "HDFC Mutual Fund",
+            "launch_date": "10 Dec 1999",
+            "date_of_incorporation": "10 Dec 1999",
+            "website": "http://www.hdfcfund.com",
+            "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+          },
+          "manager_count": 0
+        }
+      ],
+      "checks": {
+        "expense_ratio": true,
+        "exit_load": true,
+        "minimum_investment": true,
+        "fund_management": true,
+        "benchmark": true,
+        "tax": true,
+        "investment_objective": true,
+        "fund_house": true,
+        "overview": true
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+  "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+  "processed_at": "2026-06-19T03:46:11.976674+00:00",
+  "raw_html_path": null,
+  "section_count": 9,
+  "section_types": [
+    "overview",
+    "expense_ratio",
+    "exit_load",
+    "minimum_investment",
+    "benchmark",
+    "tax",
+    "fund_management",
+    "investment_objective",
+    "fund_house"
+  ],
+  "sections": [
+    {
+      "section_type": "overview",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nCategory: Equity Mid Cap\nRisk: Very High Risk\nNAV: ₹223.29\nNAV date: 16 Jun '26\nAUM: ₹97,350.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
+      "fields": {
+        "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+        "category": "Equity Mid Cap",
+        "risk": "Very High Risk",
+        "nav": "₹223.29",
+        "nav_date": "16 Jun '26",
+        "aum": "₹97,350.48 Cr",
+        "min_sip": "100",
+        "expense_ratio": "0.76%"
+      }
+    },
+    {
+      "section_type": "expense_ratio",
+      "text": "Expense ratio (direct plan): 0.76%",
+      "fields": {
+        "expense_ratio": "0.76%"
+      }
+    },
+    {
+      "section_type": "exit_load",
+      "text": "Exit load: Exit load of 1% if redeemed within 1 year.\nStamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+      "fields": {
+        "exit_load": "Exit load of 1% if redeemed within 1 year.",
+        "stamp_duty": "Stamp duty A form of tax payable for the purchase or sale of an asset or security."
+      }
+    },
+    {
+      "section_type": "minimum_investment",
+      "text": "Minimum investments:\nMin. for 1st investment: ₹100\nMin. for 2nd investment: ₹100\nMin. for SIP: ₹100",
+      "fields": {
+        "min_first_investment": "₹100",
+        "min_second_investment": "₹100",
+        "min_sip": "₹100"
+      }
+    },
+    {
+      "section_type": "benchmark",
+      "text": "Fund benchmark: NIFTY Midcap 150 Total Return Index",
+      "fields": {
+        "benchmark": "NIFTY Midcap 150 Total Return Index"
+      }
+    },
+    {
+      "section_type": "tax",
+      "text": "Tax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+      "fields": {
+        "tax_implication": "If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%."
+      }
+    },
+    {
+      "section_type": "fund_management",
+      "text": "Fund management:\nManager 1: Chirag Setalvad\nTenure: Jan 2013\nEducation: Mr. Setalvad is a B. Sc and MBA from University of North Carolina.\nExperience: Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.\nManager 2: Dhruv Muchhal\nTenure: Jun 2023\nEducation: Mr. Dhruv has done B.Com, CA and CFA\nExperience: Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells\nAlso manages: HDFC Mid Cap Fund Direct Growth; HDFC Small Cap Fund Direct Growth; HDFC Children's Fund Direct Plan; DM; Dhruv Muchhal\n(+6 more schemes)",
+      "fields": {
+        "manager_1_name": "Chirag Setalvad",
+        "manager_1_tenure": "Jan 2013",
+        "manager_1_education": "Mr. Setalvad is a B. Sc and MBA from University of North Carolina.",
+        "manager_1_experience": "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+        "manager_2_name": "Dhruv Muchhal",
+        "manager_2_tenure": "Jun 2023",
+        "manager_2_education": "Mr. Dhruv has done B.Com, CA and CFA",
+        "manager_2_experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells"
+      },
+      "managers": [
+        {
+          "name": "Chirag Setalvad",
+          "tenure": "Jan 2013",
+          "education": "Mr. Setalvad is a B. Sc and MBA from University of North Carolina.",
+          "experience": "Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+          "other_schemes": []
+        },
+        {
+          "name": "Dhruv Muchhal",
+          "tenure": "Jun 2023",
+          "education": "Mr. Dhruv has done B.Com, CA and CFA",
+          "experience": "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+          "other_schemes": [
+            "HDFC Mid Cap Fund Direct Growth",
+            "HDFC Small Cap Fund Direct Growth",
+            "HDFC Children's Fund Direct Plan",
+            "DM",
+            "Dhruv Muchhal",
+            "Jun 2023",
+            "- Present",
+            "Education",
+            "Mr. Dhruv has done B.Com, CA and CFA",
+            "Experience",
+            "Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells"
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "investment_objective",
+      "text": "Investment objective: The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies.",
+      "fields": {
+        "investment_objective": "The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies."
+      }
+    },
+    {
+      "section_type": "fund_house",
+      "text": "Fund house:\nAMC: HDFC Mutual Fund\nLaunch date: 10 Dec 1999\nDate of incorporation: 10 Dec 1999\nWebsite: http://www.hdfcfund.com\nAddress: \"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian",
+      "fields": {
+        "amc_name": "HDFC Mutual Fund",
+        "launch_date": "10 Dec 1999",
+        "date_of_incorporation": "10 Dec 1999",
+        "website": "http://www.hdfcfund.com",
+        "address": "\"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian"
+      }
+    }
+  ]
+}

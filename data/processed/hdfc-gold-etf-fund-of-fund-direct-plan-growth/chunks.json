@@ -1,0 +1,129 @@
+{
+  "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+  "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+  "chunk_count": 10,
+  "section_types": [
+    "benchmark",
+    "exit_load",
+    "expense_ratio",
+    "fund_house",
+    "fund_management",
+    "investment_objective",
+    "minimum_investment",
+    "overview",
+    "tax"
+  ],
+  "chunks": [
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-overview-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: overview\n\nScheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nRisk: High Risk\nNAV: ₹45.19\nNAV date: 19 Jun '26\nAUM: ₹12,121.18 Cr\nMin SIP: 100\nExpense ratio: 0.20%",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "overview",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-expense_ratio-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: expense_ratio\n\nExpense ratio (direct plan): 0.20%",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "expense_ratio",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-exit_load-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: exit_load\n\nExit load: Exit load of 1%, if redeemed within 15 days.\nStamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "exit_load",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-minimum_investment-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: minimum_investment\n\nMinimum investments:\nMin. for 1st investment: ₹100\nMin. for 2nd investment: ₹100\nMin. for SIP: ₹100",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "minimum_investment",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-benchmark-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: benchmark\n\nFund benchmark: Domestic Price of Gold",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "benchmark",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-tax-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: tax\n\nTax implication: If you redeem within two years, returns are taxed as per your Income Tax slab. If you redeem after two years, returns are taxed at 12.5%.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "tax",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-fund_management-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: fund_management\n\nManager: Arun Agarwal\nTenure: Feb 2023\nEducation: Mr. Agarwal is a B.Com. and Chartered Accountant\nExperience: Prior to joining HDFC Asset Management Company Limited, he has worked with SBI Funds Management Pvt. Ltd., ICICI Bank Limited, UTI Asset Management Pvt. Ltd.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": "Arun Agarwal"
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-fund_management-002",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: fund_management\n\nManager: Nandita Menezes\nTenure: Mar 2025\nEducation: CA (ICAI, INDIA), B.Com (University of Mumbai)\nExperience: Prior to joining HDFC AMC, she was associated with S.V. Ghatalia & Associates LLP.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 2,
+      "manager_name": "Nandita Menezes"
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-investment_objective-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: investment_objective\n\nInvestment objective: The Scheme seeks to generate capital appreciation by investing in units of HDFC Gold Exchange Traded Fund.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "investment_objective",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-gold-etf-fund-of-fund-direct-plan-growth-fund_house-001",
+      "text": "Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth\nSection: fund_house\n\nFund house:\nAMC: HDFC Mutual Fund\nLaunch date: 10 Dec 1999\nDate of incorporation: 10 Dec 1999\nWebsite: http://www.hdfcfund.com\nAddress: \"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian",
+      "source_url": "https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+      "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+      "section_type": "fund_house",
+      "ingested_at": "2026-06-21T08:56:25.279931+00:00",
+      "sequence": 1,
+      "manager_name": null
+    }
+  ]
+}

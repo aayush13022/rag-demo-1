@@ -1,0 +1,57 @@
+Scheme: HDFC Mid Cap Fund Direct Growth
+Source: https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth
+Processed: 2026-06-21T08:56:24.618674+00:00
+Sections: 9
+
+=== overview ===
+Scheme: HDFC Mid Cap Fund Direct Growth
+Category: Equity Mid Cap
+Risk: Very High Risk
+NAV: ₹226.50
+NAV date: 19 Jun '26
+AUM: ₹97,350.48 Cr
+Min SIP: 100
+Expense ratio: 0.76%
+
+=== expense_ratio ===
+Expense ratio (direct plan): 0.76%
+
+=== exit_load ===
+Exit load: Exit load of 1% if redeemed within 1 year.
+Stamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.
+
+=== minimum_investment ===
+Minimum investments:
+Min. for 1st investment: ₹100
+Min. for 2nd investment: ₹100
+Min. for SIP: ₹100
+
+=== benchmark ===
+Fund benchmark: NIFTY Midcap 150 Total Return Index
+
+=== tax ===
+Tax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.
+
+=== fund_management ===
+Fund management:
+Manager 1: Chirag Setalvad
+Tenure: Jan 2013
+Education: Mr. Setalvad is a B. Sc and MBA from University of North Carolina.
+Experience: Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.
+Manager 2: Dhruv Muchhal
+Tenure: Jun 2023
+Education: Mr. Dhruv has done B.Com, CA and CFA
+Experience: Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells
+Also manages: HDFC Mid Cap Fund Direct Growth; HDFC Small Cap Fund Direct Growth; HDFC Children's Fund Direct Plan; DM; Dhruv Muchhal
+(+6 more schemes)
+
+=== investment_objective ===
+Investment objective: The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies.
+
+=== fund_house ===
+Fund house:
+AMC: HDFC Mutual Fund
+Launch date: 10 Dec 1999
+Date of incorporation: 10 Dec 1999
+Website: http://www.hdfcfund.com
+Address: "HDFC House", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian

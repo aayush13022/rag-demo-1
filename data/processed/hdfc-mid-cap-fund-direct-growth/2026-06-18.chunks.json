@@ -1,0 +1,129 @@
+{
+  "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+  "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+  "chunk_count": 10,
+  "section_types": [
+    "benchmark",
+    "exit_load",
+    "expense_ratio",
+    "fund_house",
+    "fund_management",
+    "investment_objective",
+    "minimum_investment",
+    "overview",
+    "tax"
+  ],
+  "chunks": [
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-overview-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: overview\n\nScheme: HDFC Mid Cap Fund Direct Growth\nCategory: Equity Mid Cap\nRisk: Very High Risk\nNAV: ₹223.29\nNAV date: 16 Jun '26\nAUM: ₹97,350.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "overview",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-expense_ratio-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: expense_ratio\n\nExpense ratio (direct plan): 0.76%",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "expense_ratio",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-exit_load-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: exit_load\n\nExit load: Exit load of 1% if redeemed within 1 year.\nStamp duty: Stamp duty A form of tax payable for the purchase or sale of an asset or security.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "exit_load",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-minimum_investment-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: minimum_investment\n\nMinimum investments:\nMin. for 1st investment: ₹100\nMin. for 2nd investment: ₹100\nMin. for SIP: ₹100",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "minimum_investment",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-benchmark-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: benchmark\n\nFund benchmark: NIFTY Midcap 150 Total Return Index",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "benchmark",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-tax-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: tax\n\nTax implication: If you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "tax",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-fund_management-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: fund_management\n\nManager: Chirag Setalvad\nTenure: Jan 2013\nEducation: Mr. Setalvad is a B. Sc and MBA from University of North Carolina.\nExperience: Prior to joining HDFC AMC he has worked with New Vernon Advisory Services Ltd., HDFC AMC and ING Barings N.V.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": "Chirag Setalvad"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-fund_management-002",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: fund_management\n\nManager: Dhruv Muchhal\nTenure: Jun 2023\nEducation: Mr. Dhruv has done B.Com, CA and CFA\nExperience: Prior to joining HDFC MF,he has worked with Motilal Oswal Financial Services Ltd., Goldman Sachs, CRISIL Global Research & Analytics and Deloitte Haskins & Sells",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "fund_management",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 2,
+      "manager_name": "Dhruv Muchhal"
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-investment_objective-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: investment_objective\n\nInvestment objective: The scheme seeks to provide long-term capital appreciation/income by investing predominantly in Mid-Cap companies.",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "investment_objective",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    },
+    {
+      "chunk_id": "hdfc-mid-cap-fund-direct-growth-fund_house-001",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: fund_house\n\nFund house:\nAMC: HDFC Mutual Fund\nLaunch date: 10 Dec 1999\nDate of incorporation: 10 Dec 1999\nWebsite: http://www.hdfcfund.com\nAddress: \"HDFC House\", 2nd Floor, H. T. Parekh Marg, 165-166, BackbayReclamation, Churchgate Mumbai 400020 Custodian",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+      "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+      "section_type": "fund_house",
+      "ingested_at": "2026-06-18T14:33:34.258021+00:00",
+      "sequence": 1,
+      "manager_name": null
+    }
+  ]
+}
