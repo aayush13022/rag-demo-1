@@ -2,7 +2,7 @@
   "scheme_name": "HDFC Mid Cap Fund Direct Growth",
   "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
   "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
-  "processed_at": "2026-06-21T08:56:24.618674+00:00",
+  "processed_at": "2026-06-21T09:50:19.544107+00:00",
   "raw_html_path": "/Users/aayush/Documents/Rag Project/data/raw/hdfc-mid-cap-fund-direct-growth/2026-06-21.html",
   "section_count": 9,
   "section_types": [
@@ -19,13 +19,13 @@
   "sections": [
     {
       "section_type": "overview",
-      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nCategory: Equity Mid Cap\nRisk: Very High Risk\nNAV: ₹226.50\nNAV date: 19 Jun '26\nAUM: ₹97,350.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nCategory: Equity Mid Cap\nRisk: Very High Risk\nNAV: ₹223.29\nNAV date: 16 Jun '26\nAUM: ₹97,350.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
       "fields": {
         "scheme_name": "HDFC Mid Cap Fund Direct Growth",
         "category": "Equity Mid Cap",
         "risk": "Very High Risk",
-        "nav": "₹226.50",
-        "nav_date": "19 Jun '26",
+        "nav": "₹223.29",
+        "nav_date": "16 Jun '26",
         "aum": "₹97,350.48 Cr",
         "min_sip": "100",
         "expense_ratio": "0.76%"

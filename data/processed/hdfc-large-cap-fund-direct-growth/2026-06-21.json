@@ -2,7 +2,7 @@
   "scheme_name": "HDFC Large Cap Fund Direct Growth",
   "scheme_slug": "hdfc-large-cap-fund-direct-growth",
   "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
-  "processed_at": "2026-06-21T08:56:24.791427+00:00",
+  "processed_at": "2026-06-21T09:50:19.353447+00:00",
   "raw_html_path": "/Users/aayush/Documents/Rag Project/data/raw/hdfc-large-cap-fund-direct-growth/2026-06-21.html",
   "section_count": 9,
   "section_types": [
@@ -19,23 +19,23 @@
   "sections": [
     {
       "section_type": "overview",
-      "text": "Scheme: HDFC Large Cap Fund Direct Growth\nCategory: Equity Large Cap\nRisk: Very High Risk\nNAV: ₹1,210.15\nNAV date: 19 Jun '26\nAUM: ₹37,808.31 Cr\nMin SIP: 100\nExpense ratio: 1.04%",
+      "text": "Scheme: HDFC Large Cap Fund Direct Growth\nCategory: Equity Large Cap\nRisk: Very High Risk\nNAV: ₹1,203.64\nNAV date: 16 Jun '26\nAUM: ₹37,808.31 Cr\nMin SIP: 100\nExpense ratio: 1.02%",
       "fields": {
         "scheme_name": "HDFC Large Cap Fund Direct Growth",
         "category": "Equity Large Cap",
         "risk": "Very High Risk",
-        "nav": "₹1,210.15",
-        "nav_date": "19 Jun '26",
+        "nav": "₹1,203.64",
+        "nav_date": "16 Jun '26",
         "aum": "₹37,808.31 Cr",
         "min_sip": "100",
-        "expense_ratio": "1.04%"
+        "expense_ratio": "1.02%"
       }
     },
     {
       "section_type": "expense_ratio",
-      "text": "Expense ratio (direct plan): 1.04%",
+      "text": "Expense ratio (direct plan): 1.02%",
       "fields": {
-        "expense_ratio": "1.04%"
+        "expense_ratio": "1.02%"
       }
     },
     {

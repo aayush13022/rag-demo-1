@@ -1,13 +1,13 @@
 Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth
 Source: https://groww.in/mutual-funds/hdfc-gold-etf-fund-of-fund-direct-plan-growth
-Processed: 2026-06-21T08:56:25.280200+00:00
+Processed: 2026-06-21T09:50:19.427826+00:00
 Sections: 9
 
 === overview ===
 Scheme: HDFC Gold ETF Fund of Fund Direct Plan Growth
 Risk: High Risk
-NAV: ₹45.19
-NAV date: 19 Jun '26
+NAV: ₹46.83
+NAV date: 16 Jun '26
 AUM: ₹12,121.18 Cr
 Min SIP: 100
 Expense ratio: 0.20%

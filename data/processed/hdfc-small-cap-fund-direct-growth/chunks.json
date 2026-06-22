@@ -22,7 +22,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "overview",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -33,7 +33,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "expense_ratio",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -44,7 +44,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "exit_load",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -55,7 +55,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "minimum_investment",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -66,7 +66,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "benchmark",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -77,7 +77,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "tax",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -88,7 +88,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "fund_management",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": "Dhruv Muchhal"
     },
@@ -99,7 +99,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "fund_management",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 2,
       "manager_name": "Chirag Setalvad"
     },
@@ -110,7 +110,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "investment_objective",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -121,7 +121,7 @@
       "scheme_name": "HDFC Small Cap Fund Direct Growth",
       "scheme_slug": "hdfc-small-cap-fund-direct-growth",
       "section_type": "fund_house",
-      "ingested_at": "2026-06-21T08:56:25.069652+00:00",
+      "ingested_at": "2026-06-22T10:31:03.494858+00:00",
       "sequence": 1,
       "manager_name": null
     }

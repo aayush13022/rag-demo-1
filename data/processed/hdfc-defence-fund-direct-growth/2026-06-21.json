@@ -2,7 +2,7 @@
   "scheme_name": "HDFC Defence Fund Direct Growth",
   "scheme_slug": "hdfc-defence-fund-direct-growth",
   "source_url": "https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth",
-  "processed_at": "2026-06-21T08:56:25.497788+00:00",
+  "processed_at": "2026-06-21T10:04:30.271578+00:00",
   "raw_html_path": "/Users/aayush/Documents/Rag Project/data/raw/hdfc-defence-fund-direct-growth/2026-06-21.html",
   "section_count": 9,
   "section_types": [
@@ -19,13 +19,13 @@
   "sections": [
     {
       "section_type": "overview",
-      "text": "Scheme: HDFC Defence Fund Direct Growth\nCategory: Equity Thematic\nRisk: Very High Risk\nNAV: ₹30.47\nNAV date: 19 Jun '26\nAUM: ₹9,724.27 Cr\nMin SIP: 100\nExpense ratio: 0.88%",
+      "text": "Scheme: HDFC Defence Fund Direct Growth\nCategory: Equity Thematic\nRisk: Very High Risk\nNAV: ₹29.20\nNAV date: 16 Jun '26\nAUM: ₹9,724.27 Cr\nMin SIP: 100\nExpense ratio: 0.88%",
       "fields": {
         "scheme_name": "HDFC Defence Fund Direct Growth",
         "category": "Equity Thematic",
         "risk": "Very High Risk",
-        "nav": "₹30.47",
-        "nav_date": "19 Jun '26",
+        "nav": "₹29.20",
+        "nav_date": "16 Jun '26",
         "aum": "₹9,724.27 Cr",
         "min_sip": "100",
         "expense_ratio": "0.88%"

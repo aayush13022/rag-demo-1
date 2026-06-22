@@ -2,7 +2,7 @@
   "scheme_name": "HDFC Small Cap Fund Direct Growth",
   "scheme_slug": "hdfc-small-cap-fund-direct-growth",
   "source_url": "https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth",
-  "processed_at": "2026-06-21T08:56:25.069910+00:00",
+  "processed_at": "2026-06-21T09:50:19.396807+00:00",
   "raw_html_path": "/Users/aayush/Documents/Rag Project/data/raw/hdfc-small-cap-fund-direct-growth/2026-06-21.html",
   "section_count": 9,
   "section_types": [
@@ -19,23 +19,23 @@
   "sections": [
     {
       "section_type": "overview",
-      "text": "Scheme: HDFC Small Cap Fund Direct Growth\nCategory: Equity Small Cap\nRisk: Very High Risk\nNAV: ₹158.56\nNAV date: 19 Jun '26\nAUM: ₹38,809.48 Cr\nMin SIP: 100\nExpense ratio: 0.77%",
+      "text": "Scheme: HDFC Small Cap Fund Direct Growth\nCategory: Equity Small Cap\nRisk: Very High Risk\nNAV: ₹156.09\nNAV date: 16 Jun '26\nAUM: ₹38,809.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
       "fields": {
         "scheme_name": "HDFC Small Cap Fund Direct Growth",
         "category": "Equity Small Cap",
         "risk": "Very High Risk",
-        "nav": "₹158.56",
-        "nav_date": "19 Jun '26",
+        "nav": "₹156.09",
+        "nav_date": "16 Jun '26",
         "aum": "₹38,809.48 Cr",
         "min_sip": "100",
-        "expense_ratio": "0.77%"
+        "expense_ratio": "0.76%"
       }
     },
     {
       "section_type": "expense_ratio",
-      "text": "Expense ratio (direct plan): 0.77%",
+      "text": "Expense ratio (direct plan): 0.76%",
       "fields": {
-        "expense_ratio": "0.77%"
+        "expense_ratio": "0.76%"
       }
     },
     {

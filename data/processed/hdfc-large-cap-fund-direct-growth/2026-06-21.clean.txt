@@ -1,20 +1,20 @@
 Scheme: HDFC Large Cap Fund Direct Growth
 Source: https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth
-Processed: 2026-06-21T08:56:24.791427+00:00
+Processed: 2026-06-21T09:50:19.353447+00:00
 Sections: 9
 
 === overview ===
 Scheme: HDFC Large Cap Fund Direct Growth
 Category: Equity Large Cap
 Risk: Very High Risk
-NAV: ₹1,210.15
-NAV date: 19 Jun '26
+NAV: ₹1,203.64
+NAV date: 16 Jun '26
 AUM: ₹37,808.31 Cr
 Min SIP: 100
-Expense ratio: 1.04%
+Expense ratio: 1.02%
 
 === expense_ratio ===
-Expense ratio (direct plan): 1.04%
+Expense ratio (direct plan): 1.02%
 
 === exit_load ===
 Exit load: Exit load of 1% if redeemed within 1 year

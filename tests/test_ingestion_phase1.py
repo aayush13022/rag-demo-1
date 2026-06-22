@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from config.settings import EXPECTED_SOURCE_COUNT, REQUIRED_SECTIONS, load_settings
-from ingestion.fetcher import scheme_slug_from_url
+from ingestion.fetcher import _create_http_client, scheme_slug_from_url
 from ingestion.normalizer import normalize_sections
 from ingestion.parser import parse_html
 from ingestion.pipeline import ingest_source
@@ -40,6 +40,25 @@ def test_validate_url_accepts_corpus_url():
 
 def test_scheme_slug_from_url():
     assert scheme_slug_from_url(DEFENCE_URL) == "hdfc-defence-fund-direct-growth"
+
+
+def test_create_http_client_bypasses_proxy_by_default(monkeypatch):
+    monkeypatch.delenv("FETCH_TRUST_ENV", raising=False)
+    monkeypatch.setenv("HTTP_PROXY", "http://proxy.example:8080")
+    from unittest.mock import patch
+
+    with patch("ingestion.fetcher.httpx.Client") as mock_client:
+        _create_http_client(30.0)
+        mock_client.assert_called_once_with(timeout=30.0, follow_redirects=True, trust_env=False)
+
+
+def test_create_http_client_honors_proxy_when_enabled(monkeypatch):
+    monkeypatch.setenv("FETCH_TRUST_ENV", "true")
+    from unittest.mock import patch
+
+    with patch("ingestion.fetcher.httpx.Client") as mock_client:
+        _create_http_client(30.0)
+        mock_client.assert_called_once_with(timeout=30.0, follow_redirects=True, trust_env=True)
 
 
 def test_parser_extracts_nine_sections_for_defence(defence_html):

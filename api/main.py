@@ -1,5 +1,6 @@
 """FastAPI application entrypoint."""
 
+import os
 from contextlib import asynccontextmanager
 
 from config.settings import configure_logging, get_settings
@@ -15,6 +16,22 @@ from api.routes.ingest import router as ingest_router  # noqa: E402
 from rag.warmup import warmup_rag_stack  # noqa: E402
 
 settings = get_settings()
+
+DEFAULT_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+
+def _allowed_origins() -> list[str]:
+    """Combine local defaults with any production origins from CORS_ORIGINS."""
+    origins = list(DEFAULT_ALLOWED_ORIGINS)
+    extra = os.getenv("CORS_ORIGINS", "")
+    for origin in extra.split(","):
+        cleaned = origin.strip().rstrip("/")
+        if cleaned and cleaned not in origins:
+            origins.append(cleaned)
+    return origins
 
 
 @asynccontextmanager
@@ -32,10 +49,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=_allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

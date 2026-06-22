@@ -1,14 +1,14 @@
 Scheme: HDFC Mid Cap Fund Direct Growth
 Source: https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth
-Processed: 2026-06-21T08:56:24.618674+00:00
+Processed: 2026-06-21T09:50:19.544107+00:00
 Sections: 9
 
 === overview ===
 Scheme: HDFC Mid Cap Fund Direct Growth
 Category: Equity Mid Cap
 Risk: Very High Risk
-NAV: ₹226.50
-NAV date: 19 Jun '26
+NAV: ₹223.29
+NAV date: 16 Jun '26
 AUM: ₹97,350.48 Cr
 Min SIP: 100
 Expense ratio: 0.76%

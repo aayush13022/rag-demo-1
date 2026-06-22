@@ -1,20 +1,20 @@
 Scheme: HDFC Small Cap Fund Direct Growth
 Source: https://groww.in/mutual-funds/hdfc-small-cap-fund-direct-growth
-Processed: 2026-06-21T08:56:25.069910+00:00
+Processed: 2026-06-21T09:50:19.396807+00:00
 Sections: 9
 
 === overview ===
 Scheme: HDFC Small Cap Fund Direct Growth
 Category: Equity Small Cap
 Risk: Very High Risk
-NAV: ₹158.56
-NAV date: 19 Jun '26
+NAV: ₹156.09
+NAV date: 16 Jun '26
 AUM: ₹38,809.48 Cr
 Min SIP: 100
-Expense ratio: 0.77%
+Expense ratio: 0.76%
 
 === expense_ratio ===
-Expense ratio (direct plan): 0.77%
+Expense ratio (direct plan): 0.76%
 
 === exit_load ===
 Exit load: Exit load of 1% if redeemed within 1 year

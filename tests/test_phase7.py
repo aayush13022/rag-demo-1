@@ -188,3 +188,39 @@ def test_stale_corpus_alert_logged(mock_logger, scheduler_settings):
 
     warning_calls = [call.args[0] for call in mock_logger.warning.call_args_list]
     assert any("Corpus may be stale" in message for message in warning_calls)
+
+
+@patch("ingestion.scheduler.run_ingestion")
+def test_failed_ingestion_keeps_previous_corpus_version(mock_run, scheduler_settings):
+    metadata = MetadataStore(settings=scheduler_settings)
+    metadata.set_corpus_version(
+        active_version="v1",
+        embedding_provider="bge",
+        embedding_model_small="small",
+        embedding_model_large="large",
+        last_updated_from_sources="2026-06-20",
+    )
+
+    mock_run.return_value = IngestionResult(
+        status=IngestionStatus.FAILED,
+        started_at=utc_now(),
+        completed_at=utc_now(),
+        documents_processed=0,
+        sections_written=0,
+        chunks_written=0,
+        corpus_version=None,
+    )
+
+    with patch("ingestion.scheduler.time.sleep"):
+        result = run_scheduled_ingestion(scheduler_settings)
+
+    assert result is not None
+    assert result.status == IngestionStatus.FAILED
+    version = metadata.get_corpus_version()
+    assert version is not None
+    assert version.active_version == "v1"
+    assert version.last_updated_from_sources == "2026-06-20"
+
+    latest = metadata.get_latest_ingestion_run()
+    assert latest is not None
+    assert latest["status"] == "failed"

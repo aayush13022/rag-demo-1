@@ -1,6 +1,6 @@
 Scheme: HDFC Defence Fund Direct Growth
 Source: https://groww.in/mutual-funds/hdfc-defence-fund-direct-growth
-Processed: 2026-06-21T08:56:25.497788+00:00
+Processed: 2026-06-22T10:31:03.913671+00:00
 Sections: 9
 
 === overview ===

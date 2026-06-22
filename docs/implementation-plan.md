@@ -1415,15 +1415,15 @@ scheduler.start()
 
 ### Phase 7 Checklist
 
-- [ ] 7.1 Scheduler registers daily job
-- [ ] 7.2 No overlapping runs
-- [ ] 7.3 Retries work
-- [ ] 7.4 Failed run keeps old index
-- [ ] 7.5 Job logs complete
-- [ ] 7.6 Metrics logged
-- [ ] 7.7 Stale alert fires
-- [ ] 7.8 Cron documented in README
-- [ ] 7.9 Worker runs independently
+- [x] 7.1 Scheduler registers daily job
+- [x] 7.2 No overlapping runs
+- [x] 7.3 Retries work
+- [x] 7.4 Failed run keeps old index
+- [x] 7.5 Job logs complete
+- [x] 7.6 Metrics logged
+- [x] 7.7 Stale alert fires
+- [x] 7.8 Cron documented in README
+- [x] 7.9 Worker runs independently
 
 ---
 
@@ -1608,7 +1608,7 @@ Use this to track overall project progress:
 - [x] **Phase 4** — RAG generation passes ≥ 8/10 golden questions
 - [x] **Phase 5** — API live with guardrails and refusals
 - [x] **Phase 6** — UI chat works end-to-end
-- [ ] **Phase 7** — Scheduler runs daily without failure
+- [x] **Phase 7** — Scheduler runs daily without failure
 - [ ] **Phase 8** — All success criteria met; README complete; demo ready
 
 ---

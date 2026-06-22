@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import re
 import time
 from datetime import date
@@ -22,6 +23,22 @@ USER_AGENT = (
 )
 DEFAULT_TIMEOUT_SECONDS = 30.0
 DEFAULT_DELAY_SECONDS = 1.5
+
+
+def _fetch_trust_env() -> bool:
+    """Whether httpx should honor HTTP(S)_PROXY from the environment."""
+    return os.getenv("FETCH_TRUST_ENV", "false").lower() in {"1", "true", "yes"}
+
+
+def _create_http_client(timeout_seconds: float) -> httpx.Client:
+    trust_env = _fetch_trust_env()
+    if not trust_env:
+        logger.debug("Bypassing environment proxy settings for Groww fetch")
+    return httpx.Client(
+        timeout=timeout_seconds,
+        follow_redirects=True,
+        trust_env=trust_env,
+    )
 
 
 def scheme_slug_from_url(url: str) -> str:
@@ -51,7 +68,7 @@ def fetch_url(
     scheme_slug = scheme_slug_from_url(normalized_url)
 
     headers = {"User-Agent": USER_AGENT}
-    with httpx.Client(timeout=timeout_seconds, follow_redirects=True) as client:
+    with _create_http_client(timeout_seconds) as client:
         response = client.get(normalized_url, headers=headers)
         response.raise_for_status()
         final_url = str(response.url).rstrip("/")

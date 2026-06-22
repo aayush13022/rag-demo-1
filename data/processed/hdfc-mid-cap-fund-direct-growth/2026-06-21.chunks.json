@@ -17,12 +17,12 @@
   "chunks": [
     {
       "chunk_id": "hdfc-mid-cap-fund-direct-growth-overview-001",
-      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: overview\n\nScheme: HDFC Mid Cap Fund Direct Growth\nCategory: Equity Mid Cap\nRisk: Very High Risk\nNAV: ₹226.50\nNAV date: 19 Jun '26\nAUM: ₹97,350.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
+      "text": "Scheme: HDFC Mid Cap Fund Direct Growth\nSection: overview\n\nScheme: HDFC Mid Cap Fund Direct Growth\nCategory: Equity Mid Cap\nRisk: Very High Risk\nNAV: ₹223.29\nNAV date: 16 Jun '26\nAUM: ₹97,350.48 Cr\nMin SIP: 100\nExpense ratio: 0.76%",
       "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "overview",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -33,7 +33,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "expense_ratio",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -44,7 +44,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "exit_load",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -55,7 +55,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "minimum_investment",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -66,7 +66,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "benchmark",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -77,7 +77,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "tax",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -88,7 +88,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "fund_management",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": "Chirag Setalvad"
     },
@@ -99,7 +99,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "fund_management",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 2,
       "manager_name": "Dhruv Muchhal"
     },
@@ -110,7 +110,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "investment_objective",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     },
@@ -121,7 +121,7 @@
       "scheme_name": "HDFC Mid Cap Fund Direct Growth",
       "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
       "section_type": "fund_house",
-      "ingested_at": "2026-06-21T08:55:40.827195+00:00",
+      "ingested_at": "2026-06-21T09:50:19.543848+00:00",
       "sequence": 1,
       "manager_name": null
     }
