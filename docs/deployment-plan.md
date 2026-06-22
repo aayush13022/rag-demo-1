@@ -169,8 +169,12 @@ curl https://your-api.up.railway.app/health
 | **Framework Preset** | Next.js |
 | **Root Directory** | `ui` |
 | **Build Command** | `npm run build` (default) |
-| **Output Directory** | `.next` (default) |
+| **Output Directory** | **leave empty** (do not set `public`) |
 | **Install Command** | `npm install` (default) |
+
+> `ui/vercel.json` is included so Vercel detects this as a Next.js app.
+> If you see *"No Output Directory named public found"*, clear **Output Directory**
+> in Vercel → Project Settings → Build & Development Settings.
 
 ### 2.2 Set environment variables
 
