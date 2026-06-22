@@ -178,19 +178,20 @@ curl https://your-api.up.railway.app/health
 
 ### 2.2 Set environment variables
 
-In **Settings → Environment Variables**:
+In **Settings → Environment Variables**, add **both**:
 
 | Variable | Value | Environments |
 |----------|-------|--------------|
+| `NEXT_PUBLIC_API_URL` | `https://your-api.up.railway.app` | Production, Preview, Development |
 | `API_URL` | `https://your-api.up.railway.app` | Production, Preview, Development |
 
-Use your Railway public URL from step 1.6 — **no trailing slash**.
+Use your Railway public URL — **no trailing slash**.
 
-The frontend calls `/api/chat` on the same Vercel domain; Next.js proxies that to
-`API_URL` (no browser CORS issues). You do **not** need `NEXT_PUBLIC_API_URL`
-unless you want direct browser-to-Railway calls.
+`NEXT_PUBLIC_API_URL` lets the browser call Railway directly (avoids Vercel proxy
+timeouts on the first slow request). `API_URL` powers the `/api` fallback proxy.
 
-After adding or changing `API_URL`, **redeploy** so the rewrite picks it up.
+**Important:** `NEXT_PUBLIC_*` variables are baked in at build time — you must
+**redeploy** after adding or changing them.
 
 ### 2.3 Deploy
 
@@ -288,6 +289,7 @@ FETCH_TRUST_ENV=false
 ### Vercel (frontend)
 
 ```env
+NEXT_PUBLIC_API_URL=https://your-api.up.railway.app
 API_URL=https://your-api.up.railway.app
 ```
 
