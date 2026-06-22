@@ -48,6 +48,10 @@ def _render_assistant_message(response: RAGResponse) -> None:
     st.caption(response.disclaimer)
 
 
+def _reset_chat() -> None:
+    st.session_state.messages = []
+
+
 def _process_question(question: str) -> None:
     st.session_state.messages.append({"role": "user", "content": question})
     try:
@@ -74,8 +78,18 @@ def main() -> None:
 
     st.warning(f"**Disclaimer:** {DISCLAIMER}")
 
-    st.title("Mutual Fund FAQ Assistant")
-    st.caption("HDFC · 5 schemes")
+    header_col, home_col = st.columns([0.8, 0.2])
+    with header_col:
+        st.title("Mutual Fund FAQ Assistant")
+        st.caption("HDFC · 5 schemes")
+    with home_col:
+        if st.session_state.messages:
+            st.button(
+                "← Back to home",
+                key="home-button",
+                on_click=_reset_chat,
+                use_container_width=True,
+            )
 
     if not st.session_state.messages:
         st.markdown(WELCOME_MESSAGE)

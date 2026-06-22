@@ -2,6 +2,15 @@
 
 This document describes the system architecture for the **facts-only Mutual Fund FAQ Assistant** defined in [problemStatement.md](./problemStatement.md). The design is lightweight, RAG-based, and scoped to **5 HDFC fund pages on Groww**, with a **daily scheduler** that keeps the knowledge base fresh.
 
+> **Deployment note:** The app now ships as a **single Streamlit service** (`streamlit_app.py`)
+> where the UI and RAG pipeline run in one Python process — the browser talks only to
+> Streamlit, which calls `rag.generator.answer()` in-process (no separate API, no CORS).
+> The original split **Next.js (`ui/`) + FastAPI (`api/`)** stack is retained for reference
+> and described as the *legacy* path. See [deployment-plan.md](./deployment-plan.md) and
+> [streamlit.md](./streamlit.md). The component diagrams below show the logical query path,
+> which is identical in both deployments; only the transport (HTTP API vs in-process call)
+> differs.
+
 ---
 
 ## 1. Design Principles
@@ -515,17 +524,32 @@ The LLM receives retrieved chunks and must:
 
 ## 9. Chat UI
 
-Minimal frontend aligned with the problem statement.
+Minimal frontend aligned with the problem statement. The primary implementation is a
+**Streamlit app** (`streamlit_app.py`); a legacy Next.js UI lives under `ui/`.
 
 ### 9.1 UI Elements
 
 | Element | Content |
 |---------|---------|
-| **Welcome message** | Explains facts-only scope and supported schemes |
-| **Disclaimer** | `Facts-only. No investment advice.` |
-| **Example questions (3)** | Mix of scheme + fund management queries |
+| **Welcome message** | Explains facts-only scope and supported schemes (shown when chat is empty) |
+| **Disclaimer** | `Facts-only. No investment advice.` (sticky banner at top) |
+| **Example questions (3)** | Mix of scheme + fund management queries; auto-send on click |
+| **Back to home** | Resets the conversation and returns to the welcome screen; shown only once a chat has started |
 | **Chat input** | Free-text question |
 | **Response card** | Answer, source link, last-updated footer |
+| **Refusal card** | Refusal message + AMFI educational link |
+
+### 9.1.1 Streamlit Session State
+
+The Streamlit UI is stateful per browser session:
+
+| Key | Purpose |
+|-----|---------|
+| `messages` | Ordered chat history (`user` / `assistant` entries, each assistant entry holds the `RAGResponse`) |
+| `@st.cache_resource` warmup | Loads embedding models + LLM client once per process, shared across sessions |
+
+**Back to home** clears `messages`, which re-renders the welcome block, scheme list, and
+example chips.
 
 ### 9.2 Suggested Example Questions
 
@@ -533,11 +557,19 @@ Minimal frontend aligned with the problem statement.
 2. "What is the exit load on HDFC Mid Cap Fund Direct Growth?"
 3. "Who manages HDFC Large Cap Fund Direct Growth?"
 
-### 9.3 UI-to-API Integration
+### 9.3 UI-to-RAG Integration
 
-- Frontend calls `POST /chat`
+**Streamlit (current):**
+
+- `streamlit_app.py` calls `stapp.chat_handler.handle_message()` in-process
+- `handle_message()` runs the intent guardrail, then `rag.generator.answer()`
 - Renders `answer`, clickable `source_url`, and `last_updated_from_sources`
 - Shows disclaimer on every response
+
+**Legacy Next.js:**
+
+- Frontend calls `POST /chat` (proxied same-origin through `ui/app/api/[...path]/route.ts`)
+- Same render contract using the JSON response envelope (§7.5)
 
 ---
 
@@ -574,48 +606,65 @@ Minimal frontend aligned with the problem statement.
 | Layer | Suggested choice | Alternatives |
 |-------|------------------|--------------|
 | **Language** | Python 3.11+ | — |
-| **API framework** | FastAPI | Flask |
+| **App / Frontend** | **Streamlit** (UI + RAG in one process) | Next.js + FastAPI (legacy) |
+| **API framework** (legacy) | FastAPI | Flask |
 | **Scheduler** | APScheduler | cron, Celery Beat |
 | **Fetcher** | `httpx` + BeautifulSoup / Playwright | Scrapy |
-| **Embeddings** | OpenAI `text-embedding-3-small` | Sentence Transformers (local) |
+| **Embeddings** | BGE (`BAAI/bge-small/large-en-v1.5`, local) | OpenAI `text-embedding-3-small` |
 | **Vector DB** | ChromaDB | FAISS, pgvector |
-| **LLM** | GPT-4o-mini / Claude Haiku | Local OSS model |
+| **LLM** | Groq `llama-3.1-8b-instant` / `llama-3.3-70b-versatile` | GPT-4o-mini, local OSS |
 | **Metadata DB** | SQLite | PostgreSQL |
-| **Frontend** | React / Next.js or simple HTML+JS | Streamlit |
+| **Hosting** | Railway (Streamlit) | Vercel + Railway (legacy split) |
 | **Config** | `.env` + YAML allowlist | — |
 
 ---
 
 ## 12. Deployment View
 
+### 12.0 Current: Single Streamlit Service (Railway)
+
 ```mermaid
 flowchart TB
-    subgraph prod [Deployment]
-        Cron[Daily Scheduler 06:00 IST]
+    subgraph prod [Railway Deployment]
+        Cron[Daily Scheduler / Cron]
         Worker[Ingestion Worker]
-        APIApp[API + RAG Service]
+        StreamlitApp[Streamlit App\nUI + RAG in one process]
         Chroma[(ChromaDB / Vector Index)]
         SQLite[(SQLite Metadata)]
-        WebUI[Static Chat UI]
     end
 
+    User[Browser] --> StreamlitApp
     Cron --> Worker
     Worker --> Chroma
     Worker --> SQLite
-    WebUI --> APIApp
-    APIApp --> Chroma
-    APIApp --> SQLite
+    StreamlitApp --> Chroma
+    StreamlitApp --> SQLite
 ```
+
+The browser connects directly to the Streamlit app (same origin). The app imports the RAG
+pipeline and calls it in-process, so there is no separate API hop and no CORS.
 
 ### 12.1 Process Layout
 
+**Current (Streamlit):**
+
 | Process | Description |
 |---------|-------------|
-| `ingestion-worker` | Hosts scheduler + ingestion pipeline |
-| `api-server` | Serves `/chat` and status endpoints |
-| `web-ui` | Static or SSR frontend |
+| `streamlit-app` | Serves the UI **and** runs the RAG pipeline in-process (`streamlit run streamlit_app.py`) |
+| `ingestion-worker` | Scheduler + ingestion pipeline (`python -m scheduler --once` via cron) |
 
-All three can run on a single machine for MVP.
+Both share the `data/` volume (ChromaDB + SQLite). The Streamlit process is the only
+public-facing service.
+
+**Legacy (split stack):**
+
+| Process | Description |
+|---------|-------------|
+| `web-ui` | Next.js frontend on Vercel (proxies to the API) |
+| `api-server` | FastAPI serving `/chat` and status endpoints on Railway |
+| `ingestion-worker` | Scheduler + ingestion pipeline |
+
+All processes can run on a single machine for MVP.
 
 ---
 
@@ -682,11 +731,21 @@ rag-project/
 ├── storage/
 │   ├── vector_store.py
 │   └── metadata_store.py
-├── ui/
-│   └── ...                      # chat frontend
+├── streamlit_app.py             # current UI + RAG entrypoint (single service)
+├── stapp/
+│   ├── chat_handler.py          # guardrails + answer() wrapper for Streamlit
+│   └── constants.py             # UI copy (schemes, examples, disclaimer)
+├── .streamlit/
+│   └── config.toml              # theme + server settings
+├── ui/                          # legacy Next.js frontend (optional)
+│   └── ...
+├── api/                         # legacy FastAPI backend (optional)
+│   └── ...
 ├── data/
 │   ├── raw/                     # optional fetched snapshots
 │   └── chroma/                  # vector index persistence
+├── Procfile                     # streamlit run ... (Railway/Heroku)
+├── railway.toml                 # Railway deploy config
 ├── .env.example
 └── README.md
 ```
@@ -969,21 +1028,24 @@ flowchart LR
 
 **Maps to:** [implementation-plan.md — Phase 6](./implementation-plan.md#phase-6-chat-ui)
 
-**Architecture deliverables:** Browser chat UI wired to `POST /chat` per [§9](#9-chat-ui).
+**Architecture deliverables:** Browser chat UI per [§9](#9-chat-ui). Originally built as a
+Next.js app wired to `POST /chat`; the current deployment uses a **Streamlit app**
+(`streamlit_app.py`) calling the RAG pipeline in-process.
 
 #### Tasks
 
 | # | Task | Architecture component / reference |
 |---|------|-----------------------------------|
-| 6.1 | UI scaffold | `ui/index.html`, `ui/app.js`, `ui/style.css` |
+| 6.1 | UI scaffold | Streamlit `streamlit_app.py` (legacy: `ui/` Next.js app) |
 | 6.2 | Welcome screen | List 5 supported scheme names |
 | 6.3 | Disclaimer banner | Sticky facts-only disclaimer per [§9.1](#91-ui-elements) |
 | 6.4 | Example question chips | 3 clickable examples per [§9.2](#92-suggested-example-questions) |
-| 6.5 | Chat message list | Scrollable user/bot history |
+| 6.5 | Chat message list | Scrollable user/bot history (`st.session_state.messages`) |
 | 6.6 | Response card | Answer + `source_url` + `last_updated_from_sources` |
 | 6.7 | Refusal styling | Distinct card + `educational_link` button |
-| 6.8 | Loading / error states | Spinner, retry on 503 |
-| 6.9 | API integration | `fetch(POST /chat)` per [§9.3](#93-ui-to-api-integration) |
+| 6.8 | Loading / error states | Spinner during generation; error message on failure |
+| 6.9 | Back to home | Reset conversation to welcome screen per [§9.1](#91-ui-elements) |
+| 6.10 | RAG integration | `handle_message()` in-process (legacy: `fetch(POST /chat)`) per [§9.3](#93-ui-to-rag-integration) |
 
 ---
 

@@ -50,7 +50,7 @@ You are building a **facts-only chatbot** that answers questions about **5 HDFC 
 | **Goal** | Facts-only RAG chatbot for 5 HDFC schemes on Groww |
 | **AMC** | HDFC Mutual Fund |
 | **Corpus** | 5 allowlisted Groww fund pages |
-| **Core stack** | Python 3.11+, FastAPI, ChromaDB, SQLite, APScheduler, BGE embeddings (local) + Groq LLM |
+| **Core stack** | Python 3.11+, Streamlit (UI + RAG), ChromaDB, SQLite, APScheduler, BGE embeddings (local) + Groq LLM (legacy: FastAPI + Next.js) |
 | **Total phases** | 8 (Phase 0 → Phase 8) |
 | **Estimated duration** | 4–6 weeks (solo developer, MVP) |
 | **Hard rules** | ≤3 sentences, exactly 1 source link, no investment advice, no PII |
@@ -1252,7 +1252,14 @@ curl http://localhost:8000/corpus/status
 
 ### Simple Summary
 
-Build a simple chat page: welcome message, disclaimer, 3 example questions, and a text box. When the user asks something, call `POST /chat` and show the answer with a source link.
+Build a simple chat page: welcome message, disclaimer, 3 example questions, and a text box. When the user asks something, show the answer with a source link.
+
+> **Update — Streamlit migration:** The UI was originally built in Next.js (`ui/`) calling
+> `POST /chat`. The current deployment is a **single Streamlit app** (`streamlit_app.py`)
+> that calls the RAG pipeline **in-process** via `stapp/chat_handler.py` — no separate API,
+> no CORS. A **"Back to home"** button resets the chat to the welcome screen. The Next.js +
+> FastAPI stack remains in the repo as the legacy path. See
+> [streamlit.md](./streamlit.md) and [deployment-plan.md](./deployment-plan.md).
 
 ### Goal & Scope
 
@@ -1286,15 +1293,16 @@ Maps to [architecture.md §9](./architecture.md#9-chat-ui) and [problemStatement
 
 | # | Task | Implementation notes |
 |---|------|-------------------|
-| 6.1 | Scaffold UI | Simplest: `ui/index.html` + `ui/app.js` + `ui/style.css`; or React if preferred |
-| 6.2 | Welcome screen | List 5 supported scheme names |
+| 6.1 | Scaffold UI | Streamlit `streamlit_app.py` (legacy: `ui/` Next.js + Tailwind) |
+| 6.2 | Welcome screen | List 5 supported scheme names (shown when chat empty) |
 | 6.3 | Disclaimer banner | Sticky top; never hidden |
-| 6.4 | Example chips (3) | Click → auto-fill input → send |
-| 6.5 | Chat messages | Scrollable list; user right-aligned, bot left-aligned |
+| 6.4 | Example chips (3) | Click → auto-send question |
+| 6.5 | Chat messages | Scrollable list via `st.session_state.messages` |
 | 6.6 | Response card | Answer + clickable `source_url` + `last_updated_from_sources` |
-| 6.7 | Refusal styling | Different background; show `educational_link` as button |
-| 6.8 | Loading / error | Spinner on send; retry button on 503 |
-| 6.9 | API integration | `fetch(POST /chat)`; parse JSON envelope |
+| 6.7 | Refusal styling | `st.warning` + `educational_link` button |
+| 6.8 | Loading / error | Spinner during generation; error message on failure |
+| 6.9 | RAG integration | In-process `handle_message()` (legacy: `fetch(POST /chat)`) |
+| 6.10 | Back to home | Button resets `messages` and returns to the welcome screen |
 
 ### UI Copy
 
@@ -1308,11 +1316,18 @@ Maps to [architecture.md §9](./architecture.md#9-chat-ui) and [problemStatement
 
 ### Files to Create
 
-- `ui/` — Next.js app (Phase 6)
-  - `ui/app/` — layout, page, globals.css
-  - `ui/components/` — chat UI matching Stitch design
-  - `ui/lib/` — API client + constants
-- `ui/README.md`
+**Current (Streamlit):**
+
+- `streamlit_app.py` — UI + in-process RAG entrypoint
+- `stapp/chat_handler.py` — guardrails + `answer()` wrapper
+- `stapp/constants.py` — UI copy (schemes, examples, disclaimer)
+- `.streamlit/config.toml` — theme + server settings
+- `docs/streamlit.md` — run & deploy guide
+- `tests/test_streamlit.py` — handler tests
+
+**Legacy (Next.js):**
+
+- `ui/` — Next.js app (`app/`, `components/`, `lib/`) + `ui/README.md`
 
 ### Exit Criteria
 
@@ -1322,11 +1337,12 @@ Maps to [architecture.md §9](./architecture.md#9-chat-ui) and [problemStatement
 | Example click | Auto-sends question |
 | Factual answer | Answer + source link + date shown |
 | Advisory question | Refusal + educational link shown |
-| API down | Friendly error, no crash |
+| Back to home | Conversation clears, welcome screen returns |
+| Backend error | Friendly error, no crash |
 
 ### Phase 6 Checklist
 
-- [x] 6.1 UI scaffolded (Next.js + Tailwind)
+- [x] 6.1 UI scaffolded (Streamlit; legacy Next.js + Tailwind retained)
 - [x] 6.2 Welcome lists 5 schemes
 - [x] 6.3 Disclaimer always visible
 - [x] 6.4 Example chips work
@@ -1334,7 +1350,8 @@ Maps to [architecture.md §9](./architecture.md#9-chat-ui) and [problemStatement
 - [x] 6.6 Source link clickable
 - [x] 6.7 Refusal styled differently
 - [x] 6.8 Loading and error states
-- [x] 6.9 End-to-end chat works in browser (API contract verified via `tests/test_phase6.py`)
+- [x] 6.9 End-to-end chat works (Streamlit in-process; legacy API contract via `tests/test_phase6.py`)
+- [x] 6.10 Back to home button resets the conversation
 
 ---
 
@@ -1539,7 +1556,7 @@ python scripts/evaluate.py
 | **3** | Scheme-Aware Retrieval | 3–4 days | Smart retriever | Find right chunks |
 | **4** | RAG Generation | 3–4 days | LLM answers | Generate cited answers |
 | **5** | Guardrails + API | 4–5 days | `/chat` endpoint | Expose via REST |
-| **6** | Chat UI | 3–4 days | Browser chat | User-facing app |
+| **6** | Chat UI | 3–4 days | Streamlit chat (in-process RAG) | User-facing app |
 | **7** | Scheduler | 3–4 days | Daily ingestion | Auto-refresh data |
 | **8** | Test + Ship | 4–5 days | README, eval | Validate and release |
 | | **Total** | **~4–6 weeks** | MVP | |
