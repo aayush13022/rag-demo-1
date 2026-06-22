@@ -1,19 +1,17 @@
-# Deployment Plan: Vercel (Frontend) + Railway (Backend)
+# Deployment Plan: Streamlit on Railway
 
-This guide deploys the **Mutual Fund FAQ Assistant** with:
+The **Mutual Fund FAQ Assistant** now runs as a **single Streamlit app** — the UI and
+the RAG backend live in one Python process. No separate Next.js frontend or FastAPI
+backend is required.
 
 | Component | Platform | URL pattern |
 |-----------|----------|-------------|
-| **Frontend** (Next.js) | [Vercel](https://vercel.com) | `https://your-app.vercel.app` |
-| **Backend** (FastAPI) | [Railway](https://railway.app) | `https://your-api.up.railway.app` |
-| **Daily ingestion** | GitHub Actions (recommended) | `.github/workflows/daily-ingestion.yml` |
+| **Streamlit app** (UI + RAG) | [Railway](https://railway.app) | `https://your-app.up.railway.app` |
+| **Daily ingestion** | GitHub Actions / Railway cron | `.github/workflows/daily-ingestion.yml` |
 
-**Live deployment:**
-
-| Service | URL |
-|---------|-----|
-| Frontend | https://rag-demo-1-ycbh.vercel.app/ |
-| Backend | https://web-production-1e2cc.up.railway.app |
+> **Legacy stack:** The old Next.js (`ui/`) + FastAPI (`api/`) deployment is kept in
+> the repo for reference but is no longer the default deploy path. See
+> [Appendix: Legacy Vercel + FastAPI](#appendix-legacy-vercel--fastapi) if you need it.
 
 ---
 
@@ -21,53 +19,77 @@ This guide deploys the **Mutual Fund FAQ Assistant** with:
 
 ```mermaid
 flowchart LR
-    User[User Browser] --> Vercel[Vercel\nNext.js UI]
-    Vercel -->|POST /chat| Railway[Railway\nFastAPI API]
-    Railway --> Chroma[(ChromaDB\n+ metadata.db)]
-    Railway --> Groq[Groq LLM API]
-    GH[GitHub Actions\nDaily Ingestion] -.->|optional separate path| Railway
+    User[User Browser] --> Streamlit[Railway\nStreamlit app]
+    Streamlit --> RAG[rag.generator.answer]
+    RAG --> Chroma[(ChromaDB\n+ metadata.db)]
+    RAG --> Groq[Groq LLM API]
+    GH[GitHub Actions / Cron\nDaily Ingestion] -.-> Chroma
 ```
 
-The UI calls the Railway API through a **same-origin `/api` proxy** on Vercel
-(`API_URL` env var). The API loads BGE embedding models and ChromaDB from the
-`data/` directory at startup.
+The browser talks **only** to the Streamlit app (same origin — no CORS, no API proxy).
+Streamlit calls the RAG pipeline in-process:
+
+```text
+streamlit_app.py → stapp/chat_handler.py (guardrails) → rag/generator.py (retrieve + LLM)
+```
 
 ---
 
 ## Prerequisites
 
-Before deploying, ensure you have:
-
 - A [GitHub](https://github.com) repo with this project pushed (e.g. `rag-demo-1`)
 - A [Groq API key](https://console.groq.com) for LLM generation
-- A [Vercel](https://vercel.com) account (GitHub login)
 - A [Railway](https://railway.app) account (GitHub login)
 
-**Recommended Railway plan:** at least **2 GB RAM** — the API loads two BGE embedding models (`bge-small` + `bge-large`) on startup.
+**Recommended Railway plan:** at least **2 GB RAM** — the app loads BGE embedding
+models on first request.
 
 ---
 
-## Part 1: Deploy Backend on Railway
+## Run locally first
 
-### 1.1 Create the Railway project
+```bash
+# From repo root
+pip install -r requirements.txt
+cp .env.example .env        # add your GROQ_API_KEY
+streamlit run streamlit_app.py
+```
+
+Open [http://localhost:8501](http://localhost:8501) and test:
+
+> What is the expense ratio of HDFC Defence Fund Direct Growth?
+
+If the corpus is missing, build it once:
+
+```bash
+python -m scheduler --once
+```
+
+---
+
+## Deploy on Railway
+
+### 1. Create the project
 
 1. Go to [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub repo**.
 2. Select your repository (e.g. `aayush13022/rag-demo-1`).
-3. Railway auto-detects Python. Confirm the **root directory** is the repo root (not `ui/`).
+3. Railway auto-detects Python. Keep the **root directory** as the repo root.
 
-### 1.2 Configure the start command
+### 2. Start command
 
-The repo includes a `railway.toml` and a `Procfile`, so Railway uses this start
-command automatically:
+The repo includes a `Procfile` and `railway.toml`, so Railway starts Streamlit
+automatically:
 
 ```bash
-uvicorn api.main:app --host 0.0.0.0 --port $PORT
+streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0
 ```
 
-Railway injects `$PORT` automatically. Do not hardcode `8000`. To override, set
-**Settings → Deploy → Start Command** to the same value.
+Railway injects `$PORT`. Health-check path is `/_stcore/health` (Streamlit's
+built-in health endpoint).
 
-### 1.3 Set environment variables
+To override manually: **Settings → Deploy → Start Command** = the line above.
+
+### 3. Set environment variables
 
 In **Variables**, add:
 
@@ -81,203 +103,73 @@ In **Variables**, add:
 | `EMBEDDING_MODEL_LARGE` | `BAAI/bge-large-en-v1.5` | Yes |
 | `CHROMA_PERSIST_DIR` | `/data/chroma` | Yes (with volume) |
 | `METADATA_DB_PATH` | `/data/metadata.db` | Yes (with volume) |
-| `LOG_LEVEL` | `INFO` | Optional |
-| `FETCH_TRUST_ENV` | `false` | Optional |
-| `CORS_ORIGINS` | `https://your-app.vercel.app` | Yes (see 1.5) |
-| `WARMUP_ON_STARTUP` | `false` | Yes on Railway (default auto-off) |
-| `BGE_KEEP_SINGLE_MODEL` | `true` | Yes on Railway (default auto-on) |
+| `BGE_KEEP_SINGLE_MODEL` | `true` | Recommended (lower memory) |
 | `TOKENIZERS_PARALLELISM` | `false` | Recommended |
 | `OMP_NUM_THREADS` | `1` | Recommended |
+| `LOG_LEVEL` | `INFO` | Optional |
+| `FETCH_TRUST_ENV` | `false` | Optional |
 
-> **Note:** Use `/data/...` paths when attaching a Railway Volume (step 1.4). If you skip the volume, use `./data/chroma` and `./data/metadata.db` — data will reset on every redeploy.
+> **No `CORS_ORIGINS` or `API_URL` needed** — there is only one origin now.
+>
+> **Note:** Use `/data/...` paths when attaching a Railway Volume (step 4). Without a
+> volume, use `./data/chroma` and `./data/metadata.db` — but data resets on every redeploy.
 
-### 1.4 Attach a persistent volume (recommended)
+### 4. Attach a persistent volume (recommended)
 
 The corpus (`data/chroma/`, `data/metadata.db`) must survive redeploys.
 
-1. In your Railway service → **Volumes** → **Add Volume**.
+1. Railway service → **Volumes** → **Add Volume**.
 2. Mount path: `/data`
 3. Set `CHROMA_PERSIST_DIR=/data/chroma` and `METADATA_DB_PATH=/data/metadata.db`.
-4. On first deploy, copy bundled demo data into the volume (one-time):
+4. On first deploy, copy bundled demo data into the volume (one-time, via Railway shell):
 
 ```bash
-# Run via Railway shell or a one-off deploy command
 mkdir -p /data/chroma && cp -r data/chroma/* /data/chroma/ 2>/dev/null || true
 cp data/metadata.db /data/metadata.db 2>/dev/null || true
 ```
 
-Alternatively, trigger ingestion after deploy:
+Or build the corpus fresh after deploy:
 
 ```bash
 python -m scheduler --once
 ```
 
-### 1.5 Allow your Vercel domain via CORS
-
-`api/main.py` already supports a `CORS_ORIGINS` environment variable. Localhost
-origins are always allowed; any comma-separated values in `CORS_ORIGINS` are
-appended (trailing slashes are stripped and duplicates removed):
-
-```python
-DEFAULT_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
-
-
-def _allowed_origins() -> list[str]:
-    origins = list(DEFAULT_ALLOWED_ORIGINS)
-    extra = os.getenv("CORS_ORIGINS", "")
-    for origin in extra.split(","):
-        cleaned = origin.strip().rstrip("/")
-        if cleaned and cleaned not in origins:
-            origins.append(cleaned)
-    return origins
-```
-
-Just set the variable on Railway — **no code change needed**:
-
-```
-CORS_ORIGINS=https://your-app.vercel.app
-```
-
-For multiple domains (e.g. a custom domain), use a comma-separated list:
-
-```
-CORS_ORIGINS=https://your-app.vercel.app,https://faq.yourdomain.com
-```
-
-> Note: CORS matches exact origins; wildcard patterns like `https://your-app-*.vercel.app`
-> are not supported. Add each preview/custom domain explicitly.
-
-### 1.6 Generate a public domain
+### 5. Generate a public domain
 
 1. Railway service → **Settings → Networking** → **Generate Domain**.
 2. Copy the URL, e.g. `https://rag-demo-1-production.up.railway.app`.
-3. Verify:
-
-```bash
-curl https://your-api.up.railway.app/health
-# Expected: {"status":"ok"}
-```
-
-**First startup** may take 2–5 minutes while BGE models download and warm up.
+3. Open it in a browser. **First load** may take 2–5 minutes while BGE models download.
 
 ---
 
-## Part 2: Deploy Frontend on Vercel
-
-### 2.1 Import the project
-
-1. Go to [vercel.com](https://vercel.com) → **Add New → Project**.
-2. Import the same GitHub repository.
-3. Configure the project:
-
-| Setting | Value |
-|---------|-------|
-| **Framework Preset** | Next.js |
-| **Root Directory** | `ui` |
-| **Build Command** | `npm run build` (default) |
-| **Output Directory** | **leave empty** (do not set `public`) |
-| **Install Command** | `npm install` (default) |
-
-> `ui/vercel.json` is included so Vercel detects this as a Next.js app.
-> If you see *"No Output Directory named public found"*, clear **Output Directory**
-> in Vercel → Project Settings → Build & Development Settings.
-
-### 2.2 Set environment variables
-
-In **Settings → Environment Variables**, add:
-
-| Variable | Value | Environments |
-|----------|-------|--------------|
-| `API_URL` | `https://your-api.up.railway.app` | Production, Preview, Development |
-
-Use your Railway public URL — **no trailing slash**.
-
-`API_URL` powers the `/api` server-side proxy (browser → Vercel → Railway).
-**Do not set `NEXT_PUBLIC_API_URL` in production** — it forces cross-origin
-browser calls to Railway and can cause Safari "Load failed" errors.
-
-`API_URL` is read at **runtime** by the `/api` route handler, so you can update
-it without a full rebuild (redeploy to pick up env changes).
-
-### 2.3 Deploy
-
-Click **Deploy**. Vercel builds the Next.js app from the `ui/` folder.
-
-After deploy, open `https://your-app.vercel.app` and test a question like:
-
-> What is the expense ratio of HDFC Defence Fund Direct Growth?
-
----
-
-## Part 3: Connect Frontend and Backend
-
-### Checklist
-
-- [ ] Railway `/health` returns `{"status":"ok"}`
-- [ ] `API_URL` on Vercel points to Railway URL
-- [ ] `CORS_ORIGINS` on Railway includes your Vercel domain
-- [ ] `GROQ_API_KEY` is set on Railway
-- [ ] Corpus data exists (`/corpus/status` shows `active_version`)
-
-### Verify corpus status
-
-```bash
-curl https://your-api.up.railway.app/corpus/status
-```
-
-Expected fields: `active_version`, `last_updated_from_sources`, `sources` (5 funds).
-
-### Verify chat from browser
-
-Open DevTools → Network. A chat message should `POST` to:
-
-```
-https://your-app.vercel.app/api/chat
-```
-
-(Vercel proxies to Railway server-side.)
-
-If you see a CORS error, recheck `CORS_ORIGINS` on Railway and redeploy the API.
-
----
-
-## Part 4: Daily Ingestion in Production
+## Daily Ingestion in Production
 
 The chatbot needs fresh corpus data. Choose one approach:
 
-### Option A: GitHub Actions (recommended — already configured)
+### Option A: GitHub Actions (already configured)
 
-The repo includes `.github/workflows/daily-ingestion.yml` which runs at **10:00 AM IST** daily.
+`.github/workflows/daily-ingestion.yml` runs at **10:00 AM IST** daily.
 
-**Limitation:** GitHub Actions updates data in the CI runner, **not** on Railway. Use this for CI validation only, or add a step to push updated `data/` to Railway (advanced).
+**Limitation:** GitHub Actions updates data in the CI runner, **not** on Railway. Use
+this for CI validation, or add a step to sync `data/` to the Railway volume (advanced).
 
-### Option B: Railway Cron service (production data refresh)
+### Option B: Railway Cron service (production refresh)
 
 1. Add a **second Railway service** from the same repo.
-2. Start command:
-
-```bash
-python -m scheduler --once
-```
-
-3. In Railway → **Cron Schedule**: `30 4 * * *` (10:00 AM IST = 04:30 UTC).
-4. Share the same `/data` volume with the API service so ingestion updates the live index.
+2. Start command: `python -m scheduler --once`
+3. **Cron Schedule**: `30 4 * * *` (10:00 AM IST = 04:30 UTC).
+4. Share the same `/data` volume with the Streamlit service so ingestion updates the live index.
 
 ### Option C: Manual refresh
 
 ```bash
-# Railway shell on the API service
+# Railway shell on the Streamlit service
 python -m scheduler --once
 ```
 
 ---
 
-## Part 5: Environment Variable Reference
-
-### Railway (backend)
+## Environment Variable Reference
 
 ```env
 GROQ_API_KEY=gsk_...
@@ -288,8 +180,6 @@ EMBEDDING_MODEL_SMALL=BAAI/bge-small-en-v1.5
 EMBEDDING_MODEL_LARGE=BAAI/bge-large-en-v1.5
 CHROMA_PERSIST_DIR=/data/chroma
 METADATA_DB_PATH=/data/metadata.db
-CORS_ORIGINS=https://your-app.vercel.app
-WARMUP_ON_STARTUP=false
 BGE_KEEP_SINGLE_MODEL=true
 TOKENIZERS_PARALLELISM=false
 OMP_NUM_THREADS=1
@@ -297,21 +187,15 @@ LOG_LEVEL=INFO
 FETCH_TRUST_ENV=false
 ```
 
-### Vercel (frontend)
-
-```env
-API_URL=https://your-api.up.railway.app
-```
-
 ---
 
-## Part 6: Post-Deployment Verification
+## Post-Deployment Verification
 
-| Test | Command / action | Expected |
-|------|------------------|----------|
-| API health | `curl .../health` | `{"status":"ok"}` |
-| Corpus loaded | `curl .../corpus/status` | `active_version: v3`, 5 sources |
-| Chat works | Ask a factual question in UI | Answer + source link |
+| Test | Action | Expected |
+|------|--------|----------|
+| App health | Open `https://your-app.up.railway.app/_stcore/health` | `ok` |
+| App loads | Open the app URL | Disclaimer + welcome + 5 schemes |
+| Chat works | Ask a factual question | Answer + Groww source link |
 | Advisory refused | "Should I invest in HDFC Defence?" | Refusal + AMFI link |
 | Out-of-context | "What is the weather?" | "I could not find this information..." |
 
@@ -319,45 +203,22 @@ API_URL=https://your-api.up.railway.app
 
 ## Troubleshooting
 
-### "Load failed" / "Cannot reach the assistant API" on Vercel
+### App won't start / health check fails
 
-- **Remove `NEXT_PUBLIC_API_URL`** from Vercel env vars (or leave unset).
-- Set **`API_URL`** to your Railway URL and redeploy.
-- The browser should call `https://your-app.vercel.app/api/chat`, not Railway directly.
-- Verify proxy: `curl -X POST https://your-app.vercel.app/api/chat -H "Content-Type: application/json" -d '{"message":"test"}'`
-
-### CORS error in browser
-
-- Add your exact Vercel URL to `CORS_ORIGINS` on Railway.
-- Redeploy the Railway service after changing `api/main.py`.
-- Check for `http` vs `https` mismatch.
-
-### 503 / "Assistant temporarily unavailable"
-
-- Verify `GROQ_API_KEY` is set on Railway.
-- Check Railway logs for embedding or LLM errors.
-- Ensure corpus exists (`/corpus/status`).
+- Confirm the start command targets `streamlit_app.py` (not `api.main:app`).
+- Health-check path must be `/_stcore/health`.
+- Check Railway logs for missing `GROQ_API_KEY` or import errors.
 
 ### Slow first request
 
-- Normal: BGE models load on first request (~1–3 min on first deploy).
-- Warmup runs in a **background thread**, so `/health` responds immediately while
-  models load. Wait for logs to show `BGE embedding models warmed up`.
+- Normal: BGE models load on first request (~1–3 min on a fresh deploy).
+- Streamlit caches the warmed stack via `@st.cache_resource`, so later requests are fast.
 
-### Restart loop on startup (logs repeat "Started server process" / reload models)
+### Chat returns "temporarily unavailable"
 
-This means Railway is killing the container during startup — usually **out of
-memory** from loading both BGE models, or the startup exceeds the health-check
-timeout. Fixes:
-
-- Warmup is already **non-blocking** (background thread) and **non-fatal**, so the
-  app boots and serves `/health` even if model loading is slow or fails.
-- On very low-memory instances, set `WARMUP_ON_STARTUP=false` to load models
-  lazily on the first request instead of at boot.
-- Upgrade to a plan with **≥ 2 GB RAM** (recommended for local BGE models).
-- Or switch to `EMBEDDING_PROVIDER=openai` (requires `OPENAI_API_KEY`) to avoid
-  loading BGE locally and drastically reduce memory use.
-- Set the health-check path to `/health` with a generous timeout in Railway.
+- Verify `GROQ_API_KEY` is set.
+- Check Railway logs for embedding or LLM errors.
+- Ensure corpus exists (run `python -m scheduler --once`).
 
 ### Chat returns empty / no retrieval
 
@@ -367,13 +228,8 @@ timeout. Fixes:
 ### Railway out of memory
 
 - Upgrade to a plan with **≥ 2 GB RAM**.
-- Set `WARMUP_ON_STARTUP=false` so both models don't load at boot.
+- Keep `BGE_KEEP_SINGLE_MODEL=true` so only one BGE model loads at a time.
 - Or switch to `EMBEDDING_PROVIDER=openai` (requires `OPENAI_API_KEY`) to avoid loading BGE locally.
-
-### Vercel build fails
-
-- Confirm **Root Directory** is `ui`, not the repo root.
-- Run `cd ui && npm run build` locally to catch errors first.
 
 ---
 
@@ -381,22 +237,33 @@ timeout. Fixes:
 
 ```text
 1. Push code to GitHub
-2. Deploy backend on Railway
-   ├── Set env vars + start command
-   ├── Attach /data volume
-   ├── Update CORS (api/main.py + CORS_ORIGINS)
-   └── Verify /health and /corpus/status
-3. Deploy frontend on Vercel
-   ├── Root directory: ui
-   └── API_URL → Railway URL (remove NEXT_PUBLIC_API_URL if set)
-4. Test end-to-end chat on Vercel URL
-5. Set up daily ingestion (Railway cron or manual)
+2. Run locally to confirm corpus + chat work
+3. Deploy on Railway
+   ├── Set env vars (GROQ_API_KEY, Chroma paths, BGE flags)
+   ├── Attach /data volume + seed corpus
+   ├── Generate public domain
+   └── Verify /_stcore/health and a chat question
+4. Set up daily ingestion (Railway cron or manual)
 ```
+
+---
+
+## Appendix: Legacy Vercel + FastAPI
+
+The repo still contains the original split stack:
+
+- **Frontend:** Next.js under `ui/` (deploy to Vercel, root directory `ui`, env `API_URL`).
+- **Backend:** FastAPI `api/main.py` (deploy to Railway, start `uvicorn api.main:app --host 0.0.0.0 --port $PORT`).
+- The Vercel UI proxies browser requests through `ui/app/api/[...path]/route.ts` to the
+  FastAPI `POST /chat`, using the `API_URL` env var (set `CORS_ORIGINS` on the API).
+
+This path is optional. The Streamlit app above is the recommended single-service deploy.
 
 ---
 
 ## Related docs
 
+- [streamlit.md](./streamlit.md) — Streamlit app run & deploy details
 - [scheduler.md](./scheduler.md) — daily ingestion worker
 - [implementation-plan.md](./implementation-plan.md) — Phase 7 scheduler details
 - [architecture.md](./architecture.md) — system design

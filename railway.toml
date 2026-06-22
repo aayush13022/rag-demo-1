@@ -2,14 +2,16 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "uvicorn api.main:app --host 0.0.0.0 --port $PORT --workers 1"
-healthcheckPath = "/health"
+startCommand = "streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0"
+healthcheckPath = "/_stcore/health"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
 
 # Recommended Railway variables (set in dashboard Variables tab):
-# WARMUP_ON_STARTUP=false
+# GROQ_API_KEY=gsk_...
+# CHROMA_PERSIST_DIR=/data/chroma
+# METADATA_DB_PATH=/data/metadata.db
 # BGE_KEEP_SINGLE_MODEL=true
 # TOKENIZERS_PARALLELISM=false
 # OMP_NUM_THREADS=1
