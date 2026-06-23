@@ -40,8 +40,14 @@ _CUSTOM_CSS = """
 
 /* Tighten top padding and widen content a touch */
 .block-container {
-    padding-top: 2.2rem;
+    padding-top: 3rem;
     max-width: 920px;
+}
+
+/* Streamlit markdown/column blocks clip overflow by default — show full header */
+[data-testid="stMarkdownContainer"]:has(.mf-header),
+[data-testid="stHorizontalBlock"] [data-testid="column"] {
+    overflow: visible !important;
 }
 
 /* Brand header */
@@ -49,27 +55,42 @@ _CUSTOM_CSS = """
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 4px;
+    margin: 6px 0 4px 0;
+    padding: 4px 0;
+    overflow: visible;
 }
 .mf-header img {
     width: 44px;
     height: 44px;
+    flex-shrink: 0;
     border-radius: 12px;
     box-shadow: 0 4px 18px rgba(83, 103, 255, 0.35);
 }
 .mf-title {
     font-size: 1.6rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.35;
     margin: 0;
+    padding: 4px 0 2px;
+    display: block;
+    overflow: visible;
     background: linear-gradient(90deg, var(--groww-blue), var(--groww-teal));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+.mf-header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    overflow: visible;
 }
 .mf-badge {
     display: inline-block;
-    margin-top: 4px;
+    margin-top: 6px;
     padding: 2px 10px;
     font-size: 0.72rem;
     font-weight: 600;
@@ -161,8 +182,8 @@ def _render_header() -> None:
         f"""
         <div class="mf-header">
             {logo_html}
-            <div>
-                <p class="mf-title">Mutual Fund FAQ Assistant</p>
+            <div class="mf-header-text">
+                <span class="mf-title">Mutual Fund FAQ Assistant</span>
                 <span class="mf-badge">HDFC · 5 schemes · Source: Groww</span>
             </div>
         </div>

@@ -21,7 +21,7 @@ The deployed app includes:
 
 | Feature | Details |
 |---------|---------|
-| **Groww branding** | Logo (`assets/groww-logo.png`), teal/blue theme (`.streamlit/config.toml` + custom CSS) |
+| **Groww branding** | Logo (`assets/groww-logo.png`), gradient header title, teal/blue theme (`.streamlit/config.toml` + `_CUSTOM_CSS` in `streamlit_app.py`) |
 | **Disclaimer** | `Facts-only. No investment advice.` banner on every screen |
 | **Welcome + ask guide** | 5 supported schemes, 9 answerable topics, sample questions, "I can't help with" list |
 | **Example questions** | 3 clickable chips that auto-send |
@@ -80,13 +80,16 @@ Open [http://localhost:8501](http://localhost:8501) and test:
 
 > What is the expense ratio of HDFC Defence Fund Direct Growth?
 
+Chat history is written to `./data/chat_history.json` by default (git-ignored).
+
+**Legacy split stack (optional):** FastAPI on http://localhost:8000 + Next.js on
+http://localhost:3000 — see [Appendix: Legacy Vercel + FastAPI](#appendix-legacy-vercel--fastapi).
+
 If the corpus is missing, build it once:
 
 ```bash
 python -m scheduler --once
 ```
-
-Chat history is written to `./data/chat_history.json` by default (git-ignored).
 
 ---
 
@@ -244,7 +247,7 @@ Copy from `.env.example` for local development (uses `./data/...` paths).
 | Test | Action | Expected |
 |------|--------|----------|
 | App health | Open `https://your-app.up.railway.app/_stcore/health` | `ok` |
-| App loads | Open the app URL | Groww header + disclaimer + welcome + 5 schemes |
+| App loads | Open the app URL | Groww header (title + logo fully visible) + disclaimer + welcome |
 | Ask guide | Check welcome screen | 9 answerable topics + expandable sample questions |
 | Chat works | Ask a factual question | Answer + Groww source link |
 | Advisory refused | "Should I invest in HDFC Defence?" | Refusal + AMFI link |
@@ -282,6 +285,12 @@ Copy from `.env.example` for local development (uses `./data/...` paths).
 
 - Set `CHAT_HISTORY_PATH=/data/chat_history.json` and attach a `/data` volume.
 - Without a volume, the history file lives on ephemeral storage and resets each deploy.
+
+### Header title or logo clipped at top
+
+- Caused by Streamlit markdown/column `overflow: hidden` combined with gradient text.
+- Fixed in `streamlit_app.py` `_CUSTOM_CSS` (`overflow: visible`, title `line-height: 1.35`).
+- Redeploy or restart Streamlit after pulling the latest `main`.
 
 ### Stale build / ImportError (Streamlit Cloud)
 

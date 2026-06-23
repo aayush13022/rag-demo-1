@@ -536,7 +536,7 @@ Minimal frontend aligned with the problem statement. The primary implementation 
 
 | Element | Content |
 |---------|---------|
-| **Brand header** | Groww logo (`assets/groww-logo.png`) + gradient title + `HDFC · 5 schemes · Source: Groww` badge |
+| **Brand header** | Groww logo (`assets/groww-logo.png`) + gradient title **Mutual Fund FAQ Assistant** + `HDFC · 5 schemes · Source: Groww` badge; also `st.logo()` in the sidebar |
 | **Welcome message** | Explains facts-only scope and supported schemes (shown when chat is empty) |
 | **Disclaimer** | `Facts-only. No investment advice.` (styled banner at top) |
 | **What you can ask** | Two-column cards listing answerable topics per fund + expandable sample questions |
@@ -572,8 +572,10 @@ chats survive page reloads and process restarts.
 
 Each message is serialized as JSON; assistant entries store the `RAGResponse` fields
 (`dataclasses.asdict`) and are rehydrated to `RAGResponse` on load. The history file path is
-configurable via the `CHAT_HISTORY_PATH` env var and is **git-ignored** (per-user runtime
-data). On a host without a persistent disk, mount a volume so history is retained.
+resolved at runtime by `_history_path()` in `stapp/history.py` (reads `CHAT_HISTORY_PATH`
+after `get_settings()` loads `.env`; relative paths resolve against the project root).
+The file is **git-ignored** (per-user runtime data). On a host without a persistent disk,
+mount a volume so history is retained.
 
 **New chat / Back to home** starts a fresh conversation without deleting prior chats; the
 **sidebar** lets users switch between previous chats or clear all history.
@@ -599,6 +601,22 @@ comparison, prediction) mirroring the guardrail refusals in [§7.2](#72-intent-g
 
 The guide is defined in `stapp/constants.py` (`ASK_TOPICS`, `CANNOT_ASK`) so UI copy stays
 aligned with the retriever's supported sections.
+
+### 9.1.3 Groww Theme & Layout CSS
+
+Branding is applied in two layers:
+
+| Layer | Location | Purpose |
+|-------|----------|---------|
+| **Streamlit theme** | `.streamlit/config.toml` | Dark base colors (`#0b1020` background, `#00d09c` primary) |
+| **Custom CSS** | `streamlit_app.py` → `_CUSTOM_CSS` | Header gradient title, disclaimer banner, welcome cards, button/chat polish |
+
+The brand header is rendered as HTML via `st.markdown(..., unsafe_allow_html=True)` with
+classes `mf-header`, `mf-title`, and `mf-badge`. Custom CSS sets `overflow: visible` on
+Streamlit markdown/column containers so gradient text (`background-clip: text`) and the
+logo are not clipped at the top — a common Streamlit layout issue with tight `line-height`.
+
+Colors use CSS variables `--groww-teal` (`#00d09c`) and `--groww-blue` (`#5367ff`).
 
 ### 9.2 Suggested Example Questions
 
@@ -1100,6 +1118,7 @@ Next.js app wired to `POST /chat`; the current deployment uses a **Streamlit app
 | 6.10 | New chat / Back to home | Fresh conversation; prior chats retained per [§9.1.1](#911-streamlit-session-state--persistent-history) |
 | 6.11 | "What you can ask" guide | `ASK_TOPICS` / `CANNOT_ASK` per [§9.1.2](#912-what-you-can-ask-guide) |
 | 6.12 | Persistent chat history | Sidebar + `CHAT_HISTORY_PATH` disk persistence per [§9.1.1](#911-streamlit-session-state--persistent-history) |
+| 6.13 | Groww theme & header CSS | `.streamlit/config.toml` + `_CUSTOM_CSS` in `streamlit_app.py` per [§9.1.3](#913-groww-theme--layout-css) |
 
 ---
 

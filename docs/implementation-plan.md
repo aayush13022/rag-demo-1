@@ -1276,7 +1276,7 @@ Maps to [architecture.md §9](./architecture.md#9-chat-ui) and [problemStatement
 
 ```
 ┌─────────────────────────────────────────────┐
-│  [Groww logo]  HDFC Mutual Fund FAQ          │
+│  [Groww logo]  Mutual Fund FAQ Assistant     │
 │  HDFC · 5 schemes · Source: Groww            │
 │  Disclaimer: Facts-only. No advice.          │
 ├──────────────────────────┬──────────────────┤
@@ -1318,7 +1318,16 @@ Sidebar:  ➕ New chat
 | 6.9 | RAG integration | In-process `handle_message()` (legacy: `fetch(POST /chat)`) |
 | 6.10 | New chat / Back to home | Starts a fresh conversation while keeping previous chats |
 | 6.11 | "What you can ask" guide | `ASK_TOPICS` / `CANNOT_ASK` in `stapp/constants.py` |
-| 6.12 | Persistent chat history | Sidebar + `CHAT_HISTORY_PATH` via `stapp/history.py` |
+| 6.12 | Persistent chat history | Sidebar + `CHAT_HISTORY_PATH` via `stapp/history.py` (`_history_path()` resolves `.env` at runtime) |
+
+### Styling & branding
+
+| Item | Implementation |
+|------|----------------|
+| Theme | `.streamlit/config.toml` — Groww dark palette |
+| Custom CSS | `streamlit_app.py` `_CUSTOM_CSS` — header, disclaimer, cards, chat bubbles |
+| Logo | `assets/groww-logo.png` (header + `st.logo()` sidebar) |
+| Header clip fix | `overflow: visible` on Streamlit containers; gradient title uses `line-height: 1.35` + padding |
 
 ### UI Copy
 
@@ -1351,7 +1360,7 @@ Sidebar:  ➕ New chat
 
 | Test | Expected |
 |------|----------|
-| Page load | Welcome + Groww header + disclaimer + 3 examples visible |
+| Page load | Groww header (title fully visible) + disclaimer + welcome + 3 examples |
 | Example click | Auto-sends question |
 | Factual answer | Answer + source link + date shown |
 | Advisory question | Refusal + educational link shown |
@@ -1374,6 +1383,7 @@ Sidebar:  ➕ New chat
 - [x] 6.10 New chat / Back to home starts a fresh conversation
 - [x] 6.11 "What you can ask" guide lists answerable topics + sample questions
 - [x] 6.12 Persistent chat history with sidebar (`tests/test_history.py`)
+- [x] 6.13 Groww header CSS — title/logo not clipped (`streamlit_app.py` `_CUSTOM_CSS`)
 
 ---
 
