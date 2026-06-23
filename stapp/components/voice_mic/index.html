@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://unpkg.com/streamlit-component-lib@2.0.0/dist/streamlit-component-lib.js"></script>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -58,6 +57,44 @@
   </button>
 
   <script>
+    // Minimal Streamlit component bridge (no external CDN).
+    const Streamlit = {
+      postMessage(type, data) {
+        window.parent.postMessage(
+          Object.assign({ isStreamlitMessage: true, type: type }, data || {}),
+          "*"
+        );
+      },
+      setComponentReady() {
+        this.postMessage("streamlit:componentReady", { apiVersion: 1 });
+      },
+      setFrameHeight(height) {
+        this.postMessage("streamlit:setFrameHeight", { height: height });
+      },
+      setComponentValue(value) {
+        this.postMessage("streamlit:setComponentValue", { value: value });
+      },
+      events: {
+        _listeners: {},
+        addEventListener(type, fn) {
+          if (!this._listeners[type]) this._listeners[type] = [];
+          this._listeners[type].push(fn);
+        },
+        dispatch(type, detail) {
+          (this._listeners[type] || []).forEach((fn) => fn({ detail: detail }));
+        },
+      },
+      RENDER_EVENT: "streamlit:render",
+    };
+
+    window.addEventListener("message", (event) => {
+      const data = event.data;
+      if (!data || !data.type) return;
+      if (data.type === "streamlit:render") {
+        Streamlit.events.dispatch(Streamlit.RENDER_EVENT, data);
+      }
+    });
+
     const btn = document.getElementById("mic");
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -152,13 +189,12 @@
       });
     }
 
-    function onRender(event) {
-      const args = event.detail.args || {};
+    Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, (event) => {
+      const args = (event.detail && event.detail.args) || {};
       silenceMs = Number(args.silence_ms) || 6000;
       Streamlit.setFrameHeight(48);
-    }
+    });
 
-    Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender);
     Streamlit.setComponentReady();
     Streamlit.setFrameHeight(48);
   </script>

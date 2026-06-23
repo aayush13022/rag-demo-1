@@ -7,8 +7,8 @@ from typing import Any
 
 import streamlit.components.v1 as components
 
-_COMPONENT_PATH = os.path.join(os.path.dirname(__file__), "components", "voice_mic")
-_voice_mic = components.declare_component("voice_mic", path=_COMPONENT_PATH)
+_COMPONENT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "components", "voice_mic")
+_voice_mic = components.declare_component("voice_mic", path=_COMPONENT_DIR)
 
 
 def voice_input(*, silence_ms: int = 6000, key: str = "voice_mic") -> dict[str, Any] | None:
